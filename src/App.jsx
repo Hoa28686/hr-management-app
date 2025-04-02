@@ -1,10 +1,16 @@
-import { useState } from 'react'
-import './App.css'
+import { useState } from 'react';
+import Header from './Header';
+import Footer from './Footer';
+import './App.css';
 
 function App() {
 
   return (
-  
+    <div>
+      <Header/>
+      <main>kkj</main>
+      <Footer/>
+    </div>
   )
 }
 
