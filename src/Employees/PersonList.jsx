@@ -2,11 +2,11 @@ import { employees } from "./employeesData"
 import PersonCard from "./PersonCard"
 const PersonList=()=>{
     return(
-        <div>
-            {employees.map(employee=>{
-                <PersonCard />
-            })}
-        </div>
+        <>
+            {employees.map(e=>(
+                <PersonCard key={e.id} {...e} />
+            ))}
+        </>
     )
 }
 export default PersonList
