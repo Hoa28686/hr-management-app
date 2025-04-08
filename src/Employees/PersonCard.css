@@ -1,0 +1,18 @@
+.person {
+    border: 0.1rem solid rgb(209, 208, 208);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin: 1rem;
+    padding: 1.5rem;
+    text-align: left;
+    width: 25rem;
+    background: var(--body-color);
+    transition: transform 0.3s;
+  }
+  .person:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+  .name {
+    font-weight: bold;
+  }

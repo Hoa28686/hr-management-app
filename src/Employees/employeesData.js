@@ -33,7 +33,7 @@ export const employees = [
       phone: "040-3456789",
       email: "nobita.nobi@example.com",
       animal: "Dog",
-      startDate: "2019-05-23",
+      startDate: "2024-11-23",
       location: "Helsinki",
       department: "Marketing",
       skills: ["SEO", "Content Creation", "Social Media Marketing"]
@@ -59,7 +59,7 @@ export const employees = [
       phone: "040-5678901",
       email: "gian.design@example.com",
       animal: "Bear",
-      startDate: "2018-09-05",
+      startDate: "2009-09-05",
       location: "Helsinki",
       department: "Design",
       skills: ["UI/UX Design", "Figma","Sketch"]
@@ -124,10 +124,14 @@ export const employees = [
       phone: "040-0123456",
       email: "dorami.support@example.com",
       animal: "Koala",
-      startDate: "2016-12-01",
+      startDate: "2025-01-01",
       location: "Helsinki",
       department: "Customer Support",
       skills: ["Customer Service", "Problem Solving", "Communication"]
     }
   ];
   
+  export const animalToEmoji={
+
+    
+  }
