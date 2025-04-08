@@ -129,9 +129,9 @@ export const employees = [
       department: "Customer Support",
       skills: ["Customer Service", "Problem Solving", "Communication"]
     }
-  ];
-  
+  ];  
   export const animalToEmoji={
 
     
   }
+
