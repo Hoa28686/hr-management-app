@@ -8,7 +8,7 @@ function App() {
   return (
     <div >
       <Header className="container"/>
-      <main className="flex container">
+      <main className="flex">
         <PersonList/>
         
       </main>
