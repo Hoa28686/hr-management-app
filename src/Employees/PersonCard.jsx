@@ -4,7 +4,8 @@ import "./PersonCard.css";
 const PersonCard = (props) => {
   const now=new Date();
   const startDate= new Date(props.startDate);
-  const workingYear=Math.floor((now-startDate)/(1000*60*60*24*365));
+  const difference=(now-startDate)/(1000*60*60*24*365);
+  const workingYear= (difference >=1)? Math.floor(difference): difference.toFixed(1);
   console.log(workingYear);
   return (
     <div className="person">
