@@ -1,0 +1,28 @@
+.addForm {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.addForm div {
+  display: flex;
+  text-align: left;
+  margin: 0.2rem;
+}
+
+.addForm label {
+  width: 8rem;
+}
+
+.addForm input {
+  width: 15rem;
+  border-radius: var(--radius);
+  border: var(--border);
+  padding: 0.5rem;
+}
+
+.addForm input:focus {
+  outline: 1px solid green;
+}
+
+
