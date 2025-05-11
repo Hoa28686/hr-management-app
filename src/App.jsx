@@ -1,20 +1,32 @@
+<<<<<<< Updated upstream
 import { useEffect, useState } from "react";
 import axios from "axios";
+=======
+import { useState } from "react";
+>>>>>>> Stashed changes
 import { createBrowserRouter, RouterProvider } from "react-router";
 import "./App.css";
 import Root from "./pages/Root";
 import About from "./pages/About";
 import PersonList from "./pages/PersonList";
 import AddEmployee from "./pages/AddEmployee";
+<<<<<<< Updated upstream
 // import { employees } from "./data/employeesData";
 
 function App() {
   const [employeeData, setEmployeeData] = useState([]);
 
+=======
+import { employees } from "./data/employeesData";
+
+function App() {
+  const [employeeData, setEmployeeData] = useState(employees);
+>>>>>>> Stashed changes
   const addNewEmployee = (newEmployee) => {
     setEmployeeData((prev) => [...prev, newEmployee]);
   };
 
+<<<<<<< Updated upstream
   useEffect(() => {
     axios
       .get("http://localhost:3001/employees")
@@ -22,6 +34,8 @@ function App() {
       .catch((e) => console.error("Axios error: ", e.message));
   }, []);
 
+=======
+>>>>>>> Stashed changes
   const router = createBrowserRouter([
     {
       path: "/",
