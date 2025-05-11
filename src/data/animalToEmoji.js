@@ -5,6 +5,7 @@ export const animalToEmoji = {
   hamster: "🐹",
   rabbit: "🐰",
   fox: "🦊",
+  wolf: "🦊",
   bear: "🐻",
   panda: "🐼",
   koala: "🐨",
@@ -42,5 +43,5 @@ export const animalToEmoji = {
   butterfly: "🦋",
   ant: "🐜",
   bee: "🐝",
-  spider: "🕷️"
+  spider: "🕷️",
 };

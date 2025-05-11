@@ -20,6 +20,13 @@ const PersonCard = ({
     difference >= 1 ? Math.floor(difference) : difference.toFixed(1);
   // console.log(workingYear);
 
+  let animalIcon = "";
+  if (animal) {
+    const animalLower = animal.toLowerCase();
+    animalIcon = animalToEmoji[animalLower]
+      ? animalToEmoji[animalLower]
+      : animal;
+  }
   return (
     <div className="person-card">
       <p>
@@ -29,11 +36,11 @@ const PersonCard = ({
       <p>Salary: ${salary}/month</p>
       <p>Phone: {phone}</p>
       <p>Email: {email}</p>
-      <p>Favorite animal: {animalToEmoji[animal.toLowerCase()]}</p>
+      <p>Favorite animal: {animalIcon}</p>
       <p>Since: {startDate}</p>
       <p>Location: {location}</p>
       <p>Department: {department}</p>
-      <p>Skills: {skills.join(", ")}</p>
+      <p>Skills: {skills && skills.join(", ")}</p>
 
       {[5, 10, 15].includes(workingYear) && (
         <p>🎉 Schedule recognition meeting.</p>

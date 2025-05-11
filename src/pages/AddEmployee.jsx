@@ -1,3 +1,4 @@
+import axios from "axios";
 import "./AddEmployee.css";
 import { useState } from "react";
 import { useNavigate } from "react-router";
@@ -15,7 +16,9 @@ const AddEmployee = ({ onAddEmployee }) => {
     department: "",
     skills: "",
   });
+
   const navigate = useNavigate();
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value.toLowerCase() }));
@@ -28,8 +31,10 @@ const AddEmployee = ({ onAddEmployee }) => {
       salary: parseFloat(formData.salary).toFixed(2),
       skills: formData.skills.split(",").map((skill) => skill.trim()),
     };
-    onAddEmployee(newEmployee);
-    navigate("/");
+    axios
+      .post("http://localhost:3001/employees", newEmployee)
+      .then((res) => console.log(res));
+
     setFormData({
       name: "",
       title: "",
@@ -42,6 +47,7 @@ const AddEmployee = ({ onAddEmployee }) => {
       department: "",
       skills: "",
     });
+    navigate("/");
     // console.log(newEmployee);
   };
   return (
