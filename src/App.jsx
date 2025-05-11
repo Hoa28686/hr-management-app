@@ -1,17 +1,26 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 import { createBrowserRouter, RouterProvider } from "react-router";
 import "./App.css";
 import Root from "./pages/Root";
 import About from "./pages/About";
 import PersonList from "./pages/PersonList";
 import AddEmployee from "./pages/AddEmployee";
-import { employees } from "./data/employeesData";
+// import { employees } from "./data/employeesData";
 
 function App() {
-  const [employeeData, setEmployeeData] = useState(employees);
+  const [employeeData, setEmployeeData] = useState([]);
+
   const addNewEmployee = (newEmployee) => {
     setEmployeeData((prev) => [...prev, newEmployee]);
   };
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:3001/employees")
+      .then((res) => setEmployeeData(res.data))
+      .catch((e) => console.error("Axios error: ", e.message));
+  }, []);
 
   const router = createBrowserRouter([
     {
