@@ -11,7 +11,11 @@
       "startDate": "2018-04-01",
       "location": "helsinki",
       "department": "Human Resources",
-      "skills": ["recruiting", "communication", "management"]
+      "skills": [
+        "recruiting",
+        "communication",
+        "management"
+      ]
     },
     {
       "id": "2",
@@ -24,7 +28,11 @@
       "startDate": "2020-07-15",
       "location": "Helsinki",
       "department": "Engineering",
-      "skills": ["JavaScript", "React", "Node.js"]
+      "skills": [
+        "JavaScript",
+        "React",
+        "Node.js"
+      ]
     },
     {
       "id": "3",
@@ -37,7 +45,11 @@
       "startDate": "2024-11-23",
       "location": "Helsinki",
       "department": "Marketing",
-      "skills": ["SEO", "Content Creation", "Social Media Marketing"]
+      "skills": [
+        "SEO",
+        "Content Creation",
+        "Social Media Marketing"
+      ]
     },
     {
       "id": "4",
@@ -50,7 +62,11 @@
       "startDate": "2017-02-10",
       "location": "Helsinki",
       "department": "Sales",
-      "skills": ["Negotiation", "Customer Relationship", "Lead Generation"]
+      "skills": [
+        "Negotiation",
+        "Customer Relationship",
+        "Lead Generation"
+      ]
     },
     {
       "id": "5",
@@ -63,7 +79,11 @@
       "startDate": "2009-09-05",
       "location": "Helsinki",
       "department": "Design",
-      "skills": ["UI/UX Design", "Figma", "Sketch"]
+      "skills": [
+        "UI/UX Design",
+        "Figma",
+        "Sketch"
+      ]
     },
     {
       "id": "6",
@@ -76,7 +96,11 @@
       "startDate": "2021-03-20",
       "location": "Tampere",
       "department": "Data Analytics",
-      "skills": ["Python", "SQL", "Data Visualization"]
+      "skills": [
+        "Python",
+        "SQL",
+        "Data Visualization"
+      ]
     },
     {
       "id": "7",
@@ -89,7 +113,10 @@
       "startDate": "2015-01-30",
       "location": "Helsinki",
       "department": "Executive",
-      "skills": ["Leadership", "Business Development"]
+      "skills": [
+        "Leadership",
+        "Business Development"
+      ]
     },
     {
       "id": "8",
@@ -102,7 +129,11 @@
       "startDate": "2019-11-12",
       "location": "Oulu",
       "department": "Engineering",
-      "skills": ["Javascript", "HTML", "CSS"]
+      "skills": [
+        "Javascript",
+        "HTML",
+        "CSS"
+      ]
     },
     {
       "id": "9",
@@ -115,7 +146,11 @@
       "startDate": "2020-06-22",
       "location": "Helsinki",
       "department": "Finance",
-      "skills": ["Financial Analysis", "Excel", "Budgeting"]
+      "skills": [
+        "Financial Analysis",
+        "Excel",
+        "Budgeting"
+      ]
     },
     {
       "id": "10",
@@ -126,9 +161,13 @@
       "email": "dorami.support@example.com",
       "animal": "Koala",
       "startDate": "2025-01-01",
-      "location": "Helsinki",
+      "location": "helsinki",
       "department": "Customer Support",
-      "skills": ["Customer Service", "Problem Solving", "Communication"]
+      "skills": [
+        "Customer Service",
+        "Problem Solving",
+        "Communication"
+      ]
     }
   ]
 }

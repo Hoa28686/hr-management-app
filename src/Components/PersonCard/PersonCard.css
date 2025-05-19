@@ -9,6 +9,7 @@
   background: var(--body-color);
   transition: transform 0.3s;
   text-transform: capitalize;
+  position: relative;
 }
 .person:hover {
   transform: scale(1.05);
@@ -21,4 +22,15 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+}
+.review {
+  position: absolute;
+  right: -2rem;
+  bottom: -1rem;
+  padding: 0.5rem;
+  /* border: 0.1rem solid #d1d0d0; */
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  background: greenyellow;
+  z-index: 2rem;
 }

@@ -17,7 +17,7 @@ const PersonCard = ({
   skills,
   setEmployeeData,
 }) => {
-  const [Editing, setEditing] = useState(true);
+  const [Editing, setEditing] = useState(false);
   const [message, setMessage] = useState("");
   const [newInfo, setNewInfo] = useState({
     salary: salary,
@@ -128,14 +128,15 @@ const PersonCard = ({
           <p>Location: {location}</p>
           <p>Department: {department}</p>
           <p>Skills: {skills && skills.join(", ")}</p>
+          {[5, 10, 15].includes(workingYear) && (
+            <p className="review">🎉 Schedule recognition meeting.</p>
+          )}
+          {workingYear <= 0.5 && (
+            <p className="review">🔔 Schedule probation review.</p>
+          )}
           <button onClick={() => setEditing(true)}>Edit</button>
         </div>
       )}
-
-      {[5, 10, 15].includes(workingYear) && (
-        <p>🎉 Schedule recognition meeting.</p>
-      )}
-      {workingYear <= 0.5 && <p>🔔 Schedule probation review.</p>}
     </div>
   );
 };
