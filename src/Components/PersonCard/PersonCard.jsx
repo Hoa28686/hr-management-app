@@ -31,7 +31,9 @@ const PersonCard = ({
     let formatedValue = value.toLowerCase();
 
     formatedValue =
-      name === "salary"
+      name === "email"
+        ? value
+        : name === "salary"
         ? parseFloat(parseFloat(formatedValue).toFixed(2))
         : name == "skills"
         ? formatedValue.split(",").map((skill) => skill.trim())
@@ -76,63 +78,89 @@ const PersonCard = ({
       <p>
         <span className="name">{name}</span>
       </p>
-      <p>Position: {title}</p>
-      <p>Phone: {phone}</p>
-      <p>Email: {email}</p>
-      <p>Favorite animal: {animalIcon}</p>
-      <p>Since: {startDate}</p>
+      <p>
+        Position: <span>{title}</span>
+      </p>
+      <p>
+        Phone: <span>{phone}</span>
+      </p>
+      <p className="email">
+        Email: <span>{email}</span>
+      </p>
+      <p>
+        Favorite animal: <span>{animalIcon}</span>
+      </p>
+      <p>
+        Since: <span>{startDate}</span>
+      </p>
       {Editing ? (
         <div>
-          <form onSubmit={handleSubmit}>
-            <label>Salary: €</label>
-            <input
-              type="number"
-              step="any"
-              name="salary"
-              value={newInfo.salary}
-              onChange={handleChange}
-            />
-            <br />
-            <label>Location: </label>
-            <input
-              type="text"
-              name="location"
-              value={newInfo.location}
-              onChange={handleChange}
-            />
-            <br />
-            <label>Department: </label>
-            <input
-              type="text"
-              name="department"
-              value={newInfo.department}
-              onChange={handleChange}
-            />
-            <br />
-            <label>Skills: </label>
-            <input
-              type="text"
-              name="skills"
-              value={newInfo.skills}
-              onChange={handleChange}
-            />
-            <p>
-              (Enter skills in comma-seperated string,e.g., "Leadership,
-              Communication")
+          <form onSubmit={handleSubmit} class="editInfo">
+            <div className="row">
+              <label>Salary: €</label>
+              <input
+                type="number"
+                step="any"
+                name="salary"
+                value={newInfo.salary}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="row">
+              <label>Location: </label>
+              <input
+                type="text"
+                name="location"
+                value={newInfo.location}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="row">
+              <label>Department: </label>
+              <input
+                type="text"
+                name="department"
+                value={newInfo.department}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="row">
+              <label>Skills: </label>
+              <input
+                type="text"
+                name="skills"
+                value={newInfo.skills}
+                onChange={handleChange}
+              />
+            </div>
+            <p style={{ color: "grey", textTransform: "none" }}>
+              (Enter skills in comma-seperated string, e.g., "leadership,
+              communication")
             </p>
             {message && <p class="message">{message}</p>}
-            <button type="submit" disabled={isSaveDisabled}>
-              Save
-            </button>
-            <button onClick={() => setEditing(false)}>Cancel</button>
+            <div className="personCard-footer">
+              <button type="submit" disabled={isSaveDisabled}>
+                Save
+              </button>
+              <button onClick={() => setEditing(false)}>Cancel</button>
+            </div>
           </form>
         </div>
       ) : (
         <div>
-          <p>Salary: €{salary}/month</p>
-          <p>Location: {location}</p>
-          <p>Department: {department}</p>
-          <p>Skills: {skills && skills.join(", ")}</p>
+          <p>
+            Salary: <span>€{salary}/month</span>
+          </p>
+          <p>
+            Location: <span>{location}</span>
+          </p>
+          <p>
+            Department: <span>{department}</span>
+          </p>
+          <p>
+            Skills: <span>{skills && skills.join(", ")}</span>
+          </p>
+
           {[5, 10, 15].includes(workingYear) && (
             <p className="schedule recognition">
               🎉 Schedule recognition meeting.
@@ -141,7 +169,9 @@ const PersonCard = ({
           {workingYear <= 0.5 && (
             <p className="schedule probation">🔔 Schedule probation review.</p>
           )}
-          <button onClick={() => setEditing(true)}>Edit</button>
+          <div className="personCard-footer">
+            <button onClick={() => setEditing(true)}>Edit</button>
+          </div>
         </div>
       )}
     </div>

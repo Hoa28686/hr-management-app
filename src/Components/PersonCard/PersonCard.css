@@ -11,12 +11,49 @@
   text-transform: capitalize;
   position: relative;
 }
+.email {
+  text-transform: none;
+}
 .person:hover {
   transform: scale(1.05);
   cursor: pointer;
 }
+
+.person-card p span {
+  text-align: right;
+}
+.personCard-footer {
+  border-top: 1px solid grey;
+  text-align: right;
+  padding-top: 0.5rem;
+  margin-top: 1rem;
+}
+.personCard-footer button {
+  background: none;
+  border: none;
+  font-size: inherit;
+  transition: transform 0.3s;
+}
+.personCard-footer button:hover {
+  color: green;
+  transform: scale(1.1);
+}
+.row,
+.person-card p {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.3rem 0;
+}
+
+.editInfo input {
+  text-align: right;
+  padding: 0.3rem;
+  border: 1px solid grey;
+  border-radius: 0.2rem;
+}
 .name {
   font-weight: bold;
+  font-size: 1.5rem;
 }
 .list {
   display: flex;
@@ -41,7 +78,4 @@
 }
 .probation {
   background: #fdc150;
-}
-.input {
-  text-transform: capitalize;
 }
