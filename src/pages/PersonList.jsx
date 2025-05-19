@@ -15,8 +15,8 @@ const PersonList = () => {
     <>
       <h1>Employee List</h1>
       <div className="list">
-        {employeeData.map((e) => (
-          <PersonCard key={e.id} {...e} />
+        {employeeData.map((em) => (
+          <PersonCard key={em.id} {...em} setEmployeeData={setEmployeeData} />
         ))}
       </div>
     </>
