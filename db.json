@@ -2,172 +2,133 @@
   "employees": [
     {
       "id": "1",
-      "name": "Doraemon",
-      "title": "HR Manager",
+      "name": "doraemon",
+      "title": "hr manager",
       "salary": 4100,
       "phone": "040-1234567",
       "email": "doraemon@example.com",
-      "animal": "Cat",
+      "animal": "cat",
       "startDate": "2018-04-01",
       "location": "helsinki",
-      "department": "Human Resources",
-      "skills": [
-        "recruiting",
-        "communication",
-        "management"
-      ]
+      "department": "human resources",
+      "skills": ["recruiting", "communication", "management"]
     },
     {
       "id": "2",
-      "name": "Doraemi",
-      "title": "Developer",
+      "name": "doraemi",
+      "title": "developer",
       "salary": 5000,
       "phone": "040-2345678",
       "email": "doraemi@example.com",
-      "animal": "Cat",
+      "animal": "cat",
       "startDate": "2020-07-15",
-      "location": "Helsinki",
-      "department": "Engineering",
-      "skills": [
-        "JavaScript",
-        "React",
-        "Node.js"
-      ]
+      "location": "helsinki",
+      "department": "engineering",
+      "skills": ["javascript", "react", "node.js"]
     },
     {
       "id": "3",
-      "name": "Nobita Nobi",
-      "title": "Marketing Lead",
+      "name": "nobita nobi",
+      "title": "marketing lead",
       "salary": 3800,
       "phone": "040-3456789",
       "email": "nobita.nobi@example.com",
-      "animal": "Dog",
+      "animal": "dog",
       "startDate": "2024-11-23",
-      "location": "Helsinki",
-      "department": "Marketing",
-      "skills": [
-        "SEO",
-        "Content Creation",
-        "Social Media Marketing"
-      ]
+      "location": "helsinki",
+      "department": "marketing",
+      "skills": ["seo", "content creation", "social media marketing"]
     },
     {
       "id": "4",
-      "name": "Shizuka Minamoto",
-      "title": "Sales Manager",
+      "name": "shizuka minamoto",
+      "title": "sales manager",
       "salary": 4500,
       "phone": "040-4567890",
       "email": "shizuka.minamoto@example.com",
-      "animal": "Rabbit",
+      "animal": "rabbit",
       "startDate": "2017-02-10",
-      "location": "Helsinki",
-      "department": "Sales",
-      "skills": [
-        "Negotiation",
-        "Customer Relationship",
-        "Lead Generation"
-      ]
+      "location": "helsinki",
+      "department": "sales",
+      "skills": ["negotiation", "customer relationship", "lead generation"]
     },
     {
       "id": "5",
-      "name": "Gian",
-      "title": "Designer",
+      "name": "gian",
+      "title": "designer",
       "salary": 4800,
       "phone": "040-5678901",
       "email": "gian.design@example.com",
-      "animal": "Bear",
+      "animal": "bear",
       "startDate": "2009-09-05",
-      "location": "Helsinki",
-      "department": "Design",
-      "skills": [
-        "UI/UX Design",
-        "Figma",
-        "Sketch"
-      ]
+      "location": "helsinki",
+      "department": "design",
+      "skills": ["ui/ux design", "figma", "sketch"]
     },
     {
       "id": "6",
-      "name": "Suneo Honekawa",
-      "title": "Data Analyst",
+      "name": "suneo honekawa",
+      "title": "data analyst",
       "salary": 4700,
       "phone": "040-6789012",
       "email": "suneo.data@example.com",
-      "animal": "Fox",
+      "animal": "fox",
       "startDate": "2021-03-20",
-      "location": "Tampere",
-      "department": "Data Analytics",
-      "skills": [
-        "Python",
-        "SQL",
-        "Data Visualization"
-      ]
+      "location": "tampere",
+      "department": "data analytics",
+      "skills": ["python", "sql", "data visualization"]
     },
     {
       "id": "7",
-      "name": "Dekisugi",
-      "title": "Chief Executive Officer",
+      "name": "dekisugi",
+      "title": "chief executive officer",
       "salary": 6000,
       "phone": "040-7890123",
       "email": "dekisugi.ceo@example.com",
-      "animal": "Lion",
+      "animal": "lion",
       "startDate": "2015-01-30",
-      "location": "Helsinki",
-      "department": "Executive",
-      "skills": [
-        "Leadership",
-        "Business Development"
-      ]
+      "location": "helsinki",
+      "department": "executive",
+      "skills": ["leadership", "business development"]
     },
     {
       "id": "8",
-      "name": "Tamako Nobi",
-      "title": "Software Developer",
+      "name": "tamako nobi",
+      "title": "software developer",
       "salary": 4600,
       "phone": "040-8901234",
       "email": "tamako.dev@example.com",
-      "animal": "Elephant",
+      "animal": "elephant",
       "startDate": "2019-11-12",
-      "location": "Oulu",
-      "department": "Engineering",
-      "skills": [
-        "Javascript",
-        "HTML",
-        "CSS"
-      ]
+      "location": "oulu",
+      "department": "engineering",
+      "skills": ["javascript", "html", "css"]
     },
     {
       "id": "9",
-      "name": "Sewashi",
-      "title": "Finance Analyst",
+      "name": "sewashi",
+      "title": "finance analyst",
       "salary": 4200,
       "phone": "040-9012345",
       "email": "sewashi.finance@example.com",
-      "animal": "Penguin",
+      "animal": "penguin",
       "startDate": "2020-06-22",
-      "location": "Helsinki",
-      "department": "Finance",
-      "skills": [
-        "Financial Analysis",
-        "Excel",
-        "Budgeting"
-      ]
+      "location": "helsinki",
+      "department": "finance",
+      "skills": ["financial analysis", "excel", "budgeting"]
     },
     {
       "id": "10",
-      "name": "Dorami",
-      "title": "Customer Support Lead",
+      "name": "dorami",
+      "title": "customer support lead",
       "salary": 4000,
       "phone": "040-0123456",
       "email": "dorami.support@example.com",
-      "animal": "Koala",
+      "animal": "koala",
       "startDate": "2025-01-01",
       "location": "helsinki",
-      "department": "Customer Support",
-      "skills": [
-        "Customer Service",
-        "Problem Solving",
-        "Communication"
-      ]
+      "department": "customer support",
+      "skills": ["customer service", "problem solving", "communication"]
     }
   ]
 }

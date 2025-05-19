@@ -2,6 +2,7 @@ import { useState } from "react";
 import { animalToEmoji } from "../../data/animalToEmoji.js";
 import "./PersonCard.css";
 import axios from "axios";
+import _ from "lodash";
 
 const PersonCard = ({
   id,
@@ -19,12 +20,11 @@ const PersonCard = ({
 }) => {
   const [Editing, setEditing] = useState(false);
   const [message, setMessage] = useState("");
-  const [newInfo, setNewInfo] = useState({
-    salary: salary,
-    location: location,
-    department: department,
-    skills: skills,
-  });
+
+  const prevInfo = { salary, location, department, skills };
+  const [newInfo, setNewInfo] = useState(prevInfo);
+
+  // object shorthand when key name = value's variable name
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -53,6 +53,9 @@ const PersonCard = ({
       .catch((e) => console.error("Axios error: ", e.message));
     setEditing(false);
   };
+
+  // need to: npm install lodash
+  const isSaveDisabled = newInfo === "" || _.isEqual(newInfo, prevInfo);
 
   const now = new Date();
   const date = new Date(startDate);
@@ -117,8 +120,10 @@ const PersonCard = ({
               (Enter skills in comma-seperated string,e.g., "Leadership,
               Communication")
             </p>
-            {message && <p style={{ color: "green" }}>{message}</p>}
-            <button type="submit">Save</button>
+            {message && <p class="message">{message}</p>}
+            <button type="submit" disabled={isSaveDisabled}>
+              Save
+            </button>
             <button onClick={() => setEditing(false)}>Cancel</button>
           </form>
         </div>
@@ -129,10 +134,12 @@ const PersonCard = ({
           <p>Department: {department}</p>
           <p>Skills: {skills && skills.join(", ")}</p>
           {[5, 10, 15].includes(workingYear) && (
-            <p className="review">🎉 Schedule recognition meeting.</p>
+            <p className="schedule recognition">
+              🎉 Schedule recognition meeting.
+            </p>
           )}
           {workingYear <= 0.5 && (
-            <p className="review">🔔 Schedule probation review.</p>
+            <p className="schedule probation">🔔 Schedule probation review.</p>
           )}
           <button onClick={() => setEditing(true)}>Edit</button>
         </div>
