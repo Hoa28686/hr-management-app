@@ -8,7 +8,12 @@ const PersonList = ({ employeeData, handleInfoChange }) => {
       <h1>Employee List</h1>
       <div className="list">
         {employeeData.map((em) => (
-          <PersonCard key={em.id} {...em} handleInfoChange={handleInfoChange} />
+          <PersonCard
+            key={em.id}
+            {...em}
+            handleInfoChange={handleInfoChange}
+            message={message}
+          />
         ))}
       </div>
     </>
