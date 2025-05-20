@@ -16,15 +16,14 @@ const PersonCard = ({
   location,
   department,
   skills,
-  setEmployeeData,
+  handleInfoChange,
+  message,
 }) => {
   const [Editing, setEditing] = useState(false);
-  const [message, setMessage] = useState("");
-
-  const prevInfo = { salary, location, department, skills };
-  const [newInfo, setNewInfo] = useState(prevInfo);
 
   // object shorthand when key name = value's variable name
+  const prevInfo = { salary, location, department, skills };
+  const [newInfo, setNewInfo] = useState(prevInfo);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -35,37 +34,34 @@ const PersonCard = ({
         ? value
         : name === "salary"
         ? parseFloat(parseFloat(formatedValue).toFixed(2))
-        : name == "skills"
-        ? formatedValue.split(",").map((skill) => skill.trim())
         : formatedValue;
+
     setNewInfo((prev) => ({ ...prev, [name]: formatedValue }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    axios
-      .patch(`http://localhost:3001/employees/${id}`, newInfo)
-      .then((res) => {
-        setEmployeeData((prev) =>
-          prev.map((em) => (em.id === id ? res.data : em))
-        );
-        setMessage("Employee information updated successfuly!");
-      })
-      .catch((e) => console.error("Axios error: ", e.message));
+    const skillArray = newInfo.skills.split(",").map((skill) => skill.trim());
+    handleInfoChange(id, { ...newInfo, skills: skillArray });
     setEditing(false);
   };
 
   // need to: npm install lodash
   const isSaveDisabled = newInfo === "" || _.isEqual(newInfo, prevInfo);
 
+  const handleCancel = () => {
+    setNewInfo(prevInfo);
+    setEditing(false);
+  };
+
+  // schedule meeting or review
   const now = new Date();
   const date = new Date(startDate);
   const difference = (now - date) / (1000 * 60 * 60 * 24 * 365);
   const workingYear =
     difference >= 1 ? Math.floor(difference) : difference.toFixed(1);
-  // console.log(workingYear);
 
+  // animal icon
   let animalIcon = "";
   if (animal) {
     const animalLower = animal.toLowerCase();
@@ -73,6 +69,7 @@ const PersonCard = ({
       ? animalToEmoji[animalLower]
       : animal;
   }
+
   return (
     <div className="person-card">
       <p>
@@ -95,7 +92,7 @@ const PersonCard = ({
       </p>
       {Editing ? (
         <div>
-          <form onSubmit={handleSubmit} class="editInfo">
+          <form onSubmit={handleSubmit} className="editInfo">
             <div className="row">
               <label>Salary: €</label>
               <input
@@ -126,12 +123,12 @@ const PersonCard = ({
             </div>
             <div className="row">
               <label>Skills: </label>
-              <input
+              <textarea
                 type="text"
                 name="skills"
                 value={newInfo.skills}
                 onChange={handleChange}
-              />
+              ></textarea>
             </div>
             <p style={{ color: "grey", textTransform: "none" }}>
               (Enter skills in comma-seperated string, e.g., "leadership,
@@ -139,10 +136,14 @@ const PersonCard = ({
             </p>
             {message && <p class="message">{message}</p>}
             <div className="personCard-footer">
-              <button type="submit" disabled={isSaveDisabled}>
+              <button
+                type="submit"
+                disabled={isSaveDisabled}
+                className={isSaveDisabled ? "disabled" : ""}
+              >
                 Save
               </button>
-              <button onClick={() => setEditing(false)}>Cancel</button>
+              <button onClick={handleCancel}>Cancel</button>
             </div>
           </form>
         </div>

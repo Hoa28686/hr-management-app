@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { createBrowserRouter, RouterProvider } from "react-router";
+import { BrowserRouter, Route, Routes } from "react-router";
 import "./App.css";
 import Root from "./pages/Root";
 import About from "./pages/About";
@@ -9,28 +9,57 @@ import AddEmployee from "./pages/AddEmployee";
 import axios from "axios";
 
 function App() {
+  const [employeeData, setEmployeeData] = useState([]);
+  const [message, setMessage] = useState("");
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:3001/employees")
+      .then((res) => setEmployeeData(res.data))
+      .catch((e) => console.error("Axios error: ", e.message));
+  }, []);
+
+  const handleInfoChange = (id, newInfo) => {
+    axios
+      .patch(`http://localhost:3001/employees/${id}`, newInfo)
+      .then((res) => {
+        setEmployeeData((prev) =>
+          prev.map((em) => (em.id === id ? res.data : em))
+        );
+        setMessage("Employee information updated successfuly!");
+      })
+      .catch((e) => console.error("Axios error: ", e.message));
+  };
   const addNewEmployee = (newEmployee) => {
     setEmployeeData((prev) => [...prev, newEmployee]);
   };
 
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Root />,
-      children: [
-        {
-          path: "",
-          element: <PersonList />,
-        },
-        {
-          path: "/add-employee",
-          element: <AddEmployee onAddEmployee={addNewEmployee} />,
-        },
-        { path: "/about", element: <About /> },
-      ],
-    },
-  ]);
-  return <RouterProvider router={router}></RouterProvider>;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Root />}>
+          <Route path="/about" element={<About />} />
+          <Route
+            index
+            element={
+              <PersonList
+                employeeData={employeeData}
+                handleInfoChange={handleInfoChange}
+                message={message}
+                // onToggleChange={handleToggleField}
+                // onPriceChange={handlePriceChange}
+              />
+            }
+          />
+          {/* <Route path="/books/:id" element={<BookDetail />} /> */}
+          <Route
+            path="/add-employee"
+            element={<AddEmployee onAddEmployee={addNewEmployee} />}
+          />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
