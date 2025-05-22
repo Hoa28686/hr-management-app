@@ -33,7 +33,8 @@ const AddEmployee = ({ onAddEmployee }) => {
     };
     axios
       .post("https://react-hr-app.onrender.com/employees", newEmployee)
-      .then((res) => console.log(res));
+      .then((res) => console.log(res))
+      .catch((e) => console.error(e.message));
 
     setFormData({
       name: "",
