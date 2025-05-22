@@ -21,14 +21,20 @@ const AddEmployee = ({ onAddEmployee }) => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value.toLowerCase() }));
+    let formatedValue = value.toLowerCase();
+    formatedValue =
+      name === "email"
+        ? value
+        : name === "salary"
+        ? parseFloat(parseFloat(formatedValue).toFixed(2))
+        : formatedValue;
+    setFormData((prev) => ({ ...prev, [name]: formatedValue }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const newEmployee = {
       ...formData,
-      salary: parseFloat(formData.salary).toFixed(2),
       skills: formData.skills.split(",").map((skill) => skill.trim()),
     };
     axios
