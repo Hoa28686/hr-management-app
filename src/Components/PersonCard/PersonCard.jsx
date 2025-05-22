@@ -143,7 +143,9 @@ const PersonCard = ({
               >
                 Save
               </button>
-              <button onClick={handleCancel}>Cancel</button>
+              <button type="button" onClick={handleCancel}>
+                Cancel
+              </button>
             </div>
           </form>
         </div>
