@@ -134,7 +134,6 @@ const PersonCard = ({
               (Enter skills in comma-seperated string, e.g., "leadership,
               communication")
             </p>
-            {message && <p class="message">{message}</p>}
             <div className="personCard-footer">
               <button
                 type="submit"
@@ -163,6 +162,7 @@ const PersonCard = ({
           <p>
             Skills: <span>{skills && skills.join(", ")}</span>
           </p>
+          {message && <p class="message">{message}</p>}
 
           {[5, 10, 15].includes(workingYear) && (
             <p className="schedule recognition">

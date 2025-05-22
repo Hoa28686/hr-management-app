@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import PersonCard from "../Components/PersonCard/PersonCard";
+import PersonCard from "../components/PersonCard/PersonCard";
 import axios from "axios";
 
 const PersonList = ({ employeeData, handleInfoChange, message }) => {
