@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import PersonCard from "../Components/PersonCard/PersonCard";
 import axios from "axios";
 
-const PersonList = ({ employeeData, handleInfoChange }) => {
+const PersonList = ({ employeeData, handleInfoChange, message }) => {
   return (
     <>
       <h1>Employee List</h1>
