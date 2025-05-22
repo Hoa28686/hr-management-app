@@ -27,16 +27,21 @@ const AddEmployee = ({ onAddEmployee }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    Object.entries(formData).map((key) => {
-      formData[key].toLowerCase();
-      formData[key] =
-        key === "email"
-          ? value
-          : key === "salary"
-          ? parseFloat(parseFloat(formatedValue).toFixed(2))
-          : formatedValue;
-    });
-    const newEmployee = formData;
+    const newEmployee = Object.fromEntries(
+      Object.entries(formData).map(([key, value]) => {
+        let formatedValue =
+          key === "email"
+            ? value
+            : key === "salary"
+            ? parseFloat(parseFloat(value).toFixed(2))
+            : key === "skills"
+            ? value.split(",").map((skill) => skill.trim())
+            : typeof value === "string"
+            ? value.toLowerCase()
+            : value;
+        return [key, formatedValue];
+      })
+    );
     axios
       .post("https://react-hr-app.onrender.com/employees", newEmployee)
       .then((res) => console.log(res))
