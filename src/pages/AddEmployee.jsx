@@ -32,7 +32,7 @@ const AddEmployee = ({ onAddEmployee }) => {
       skills: formData.skills.split(",").map((skill) => skill.trim()),
     };
     axios
-      .post("http://localhost:3001/employees", newEmployee)
+      .post("https://react-hr-app.onrender.com/employees", newEmployee)
       .then((res) => console.log(res));
 
     setFormData({

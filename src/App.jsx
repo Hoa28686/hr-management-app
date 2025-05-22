@@ -14,14 +14,14 @@ function App() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/employees")
+      .get("https://react-hr-app.onrender.com/employees")
       .then((res) => setEmployeeData(res.data))
       .catch((e) => console.error("Axios error: ", e.message));
   }, []);
 
   const handleInfoChange = (id, newInfo) => {
     axios
-      .patch(`http://localhost:3001/employees/${id}`, newInfo)
+      .patch(`https://react-hr-app.onrender.com/employees/${id}`, newInfo)
       .then((res) => {
         setEmployeeData((prev) =>
           prev.map((em) => (em.id === id ? res.data : em))
