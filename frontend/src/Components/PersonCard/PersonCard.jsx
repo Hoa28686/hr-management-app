@@ -17,7 +17,6 @@ const PersonCard = ({
   department,
   skills,
   handleInfoChange,
-  message,
 }) => {
   const [Editing, setEditing] = useState(false);
 
@@ -162,7 +161,6 @@ const PersonCard = ({
           <p>
             Skills: <span>{skills && skills.join(", ")}</span>
           </p>
-          {message && <p class="message">{message}</p>}
 
           {[5, 10, 15].includes(workingYear) && (
             <p className="schedule recognition">

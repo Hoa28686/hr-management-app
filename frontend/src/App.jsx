@@ -10,7 +10,6 @@ import axios from "axios";
 
 function App() {
   const [employeeData, setEmployeeData] = useState([]);
-  const [message, setMessage] = useState("");
 
   useEffect(() => {
     axios
@@ -26,7 +25,6 @@ function App() {
         setEmployeeData((prev) =>
           prev.map((em) => (em.id === id ? res.data : em))
         );
-        setMessage("Employee information updated successfuly!");
       })
       .catch((e) => console.error("Axios error: ", e.message));
   };
@@ -45,7 +43,6 @@ function App() {
               <PersonList
                 employeeData={employeeData}
                 handleInfoChange={handleInfoChange}
-                message={message}
                 // onToggleChange={handleToggleField}
                 // onPriceChange={handlePriceChange}
               />
