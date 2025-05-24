@@ -7,26 +7,24 @@ import PersonList from "./pages/PersonList";
 import AddEmployee from "./pages/AddEmployee";
 // import { employees } from "./data/employeesData";
 import axios from "axios";
+import useAxios from "./hooks/useAxios";
 
 function App() {
   const [employeeData, setEmployeeData] = useState([]);
-
+  const { get, patch, error, loading, data } = useAxios();
+  const apiUrl = "https://react-hr-app.onrender.com/employees";
   useEffect(() => {
-    axios
-      .get("https://react-hr-app.onrender.com/employees")
-      .then((res) => setEmployeeData(res.data))
-      .catch((e) => console.error("Axios error: ", e.message));
+    const fetchData = async (apirurl) => {
+      setEmployeeData(await get(apiUrl));
+    };
+    fetchData(apiUrl);
   }, []);
 
-  const handleInfoChange = (id, newInfo) => {
-    axios
-      .patch(`https://react-hr-app.onrender.com/employees/${id}`, newInfo)
-      .then((res) => {
-        setEmployeeData((prev) =>
-          prev.map((em) => (em.id === id ? res.data : em))
-        );
-      })
-      .catch((e) => console.error("Axios error: ", e.message));
+  const handleInfoChange = async (id, newInfo) => {
+    const updatedInfo = patch(apiUrl, id, newInfo);
+    setEmployeeData((prev) =>
+      prev.map((em) => (em.id === id ? updatedInfo : em))
+    );
   };
   const addNewEmployee = (newEmployee) => {
     setEmployeeData((prev) => [...prev, newEmployee]);
@@ -51,7 +49,9 @@ function App() {
           {/* <Route path="/books/:id" element={<BookDetail />} /> */}
           <Route
             path="/add-employee"
-            element={<AddEmployee onAddEmployee={addNewEmployee} />}
+            element={
+              <AddEmployee onAddEmployee={addNewEmployee} apiUrl={apiUrl} />
+            }
           />
         </Route>
       </Routes>

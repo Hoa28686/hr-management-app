@@ -2,8 +2,9 @@ import axios from "axios";
 import "./AddEmployee.css";
 import { useState } from "react";
 import { useNavigate } from "react-router";
+import useAxios from "../hooks/useAxios";
 
-const AddEmployee = ({ onAddEmployee }) => {
+const AddEmployee = ({ onAddEmployee, apiUrl }) => {
   const [formData, setFormData] = useState({
     name: "",
     title: "",
@@ -16,8 +17,8 @@ const AddEmployee = ({ onAddEmployee }) => {
     department: "",
     skills: "",
   });
-
   const navigate = useNavigate();
+  const { post } = useAxios();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -25,8 +26,9 @@ const AddEmployee = ({ onAddEmployee }) => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
     const newEmployee = Object.fromEntries(
       Object.entries(formData).map(([key, value]) => {
         let formatedValue =
@@ -42,10 +44,8 @@ const AddEmployee = ({ onAddEmployee }) => {
         return [key, formatedValue];
       })
     );
-    axios
-      .post("https://react-hr-app.onrender.com/employees", newEmployee)
-      .then((res) => console.log(res))
-      .catch((e) => console.error(e.message));
+    const addedNewEmployee = await post(apiUrl, newEmployee);
+    onAddEmployee(addedNewEmployee);
 
     setFormData({
       name: "",

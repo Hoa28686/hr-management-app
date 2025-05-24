@@ -40,8 +40,11 @@ const PersonCard = ({
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const skillArray = newInfo.skills.split(",").map((skill) => skill.trim());
-    handleInfoChange(id, { ...newInfo, skills: skillArray });
+
+    if (!Array.isArray(newInfo.skills)) {
+      newInfo.skills = newInfo.skills.split(",").map((skill) => skill.trim());
+    }
+    handleInfoChange(id, newInfo);
     setEditing(false);
   };
 
