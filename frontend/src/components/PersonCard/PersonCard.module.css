@@ -5,7 +5,7 @@
   margin: 2rem;
   padding: 1rem;
   text-align: left;
-  max-width: 25rem;
+  width: 25rem;
   background: var(--body-background);
   text-transform: capitalize;
   position: relative;
