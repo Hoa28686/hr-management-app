@@ -1,6 +1,6 @@
 footer {
   height: 3rem;
-  background: var(--background);
+  background: var(--header-background);
   display: flex;
   align-items: center;
   justify-content: center;

@@ -6,7 +6,7 @@
   margin-bottom: 2rem;
   background-color: var(--header-background);
   z-index: var(--z);
-  transition: box-shadow 0.4s, background-color 0.4s;
+  transition: background-color 0.4s;
 }
 .header .container {
   height: var(--header-height);
@@ -22,15 +22,15 @@
 
 .nav-logo {
   font-family: var(--second-font);
-  font-size: var(--h2-font-size);
+  font-size: var(--logo-size);
   color: var(--title-color);
 }
 
 .nav-close,
 .nav-theme,
 .nav-mini-menu {
-  width: var(--h2-font-size);
-  height: var(--h2-font-size);
+  width: var(--logo-size);
+  height: var(--logo-size);
   color: var(--title-color);
   cursor: pointer;
 }
@@ -38,11 +38,6 @@
   display: flex;
   justify-content: center;
   gap: 1rem;
-}
-
-/* show header shadow when scrolling */
-.show-shadow {
-  box-shadow: var(--shadow);
 }
 
 /* ___________________ nav bar for mobile devices ____________*/
@@ -104,29 +99,3 @@
     gap: 1.5rem;
   }
 }
-
-/* 
-header {
-  background: var(--background);
-  height: 5rem;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  margin-bottom: 2rem;
-}
-
-ul {
-  list-style: inline-block;
-  padding: 0.5rem;
-}
-
-.logo {
-  font-size: 1.5rem;
-  text-align: center;
-  line-height: 1;
-  font-family: "Cherry Bomb One", system-ui;
-}
-
-*/

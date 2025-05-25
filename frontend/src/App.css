@@ -6,23 +6,3 @@ main {
   min-height: calc(100vh);
   margin-block: 2rem;
 }
-
-
-/* .container {
-  width: 90%;
-  margin: auto;
-}
-
-header,
-footer {
-  flex-shrink: 0;
-  padding: 1rem;
-}
-
-main.container {
-  margin-block: 2rem;
-}
-h1 {
-  font-size: 2em;
-  line-height: 1.1;
-} */

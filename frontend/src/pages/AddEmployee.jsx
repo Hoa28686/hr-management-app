@@ -61,11 +61,13 @@ const AddEmployee = ({ onAddEmployee, apiUrl }) => {
   };
 
   return (
-    <div >
-      <form  onSubmit={handleSubmit} className="addForm container">
+    <>
+      <h1>Add new employee</h1>
+      <form onSubmit={handleSubmit} className="addForm container">
         <div>
           <label htmlFor="name">Name: </label>
           <input
+            id="name"
             type="text"
             name="name"
             value={formData.name}
@@ -76,6 +78,7 @@ const AddEmployee = ({ onAddEmployee, apiUrl }) => {
         <div>
           <label htmlFor="title">Title: </label>
           <input
+            id="title"
             type="text"
             name="title"
             value={formData.title}
@@ -86,6 +89,7 @@ const AddEmployee = ({ onAddEmployee, apiUrl }) => {
         <div>
           <label htmlFor="salary">Salary: </label>
           <input
+            id="salary"
             type="number"
             step="any"
             name="salary"
@@ -97,6 +101,7 @@ const AddEmployee = ({ onAddEmployee, apiUrl }) => {
         <div>
           <label htmlFor="phone">Phone: </label>
           <input
+            id="phone"
             type="tel"
             name="phone"
             value={formData.phone}
@@ -107,6 +112,7 @@ const AddEmployee = ({ onAddEmployee, apiUrl }) => {
         <div>
           <label htmlFor="email">Email: </label>
           <input
+            id="email"
             type="email"
             name="email"
             value={formData.email}
@@ -117,6 +123,7 @@ const AddEmployee = ({ onAddEmployee, apiUrl }) => {
         <div>
           <label htmlFor="animal">Animal: </label>
           <input
+            id="animal"
             type="text"
             name="animal"
             value={formData.animal}
@@ -127,6 +134,7 @@ const AddEmployee = ({ onAddEmployee, apiUrl }) => {
         <div>
           <label htmlFor="startDate">Start date: </label>
           <input
+            id="startDate"
             type="date"
             name="startDate"
             value={formData.startDate}
@@ -137,6 +145,7 @@ const AddEmployee = ({ onAddEmployee, apiUrl }) => {
         <div>
           <label htmlFor="location">Location: </label>
           <input
+            id="location"
             type="text"
             name="location"
             value={formData.location}
@@ -147,6 +156,7 @@ const AddEmployee = ({ onAddEmployee, apiUrl }) => {
         <div>
           <label htmlFor="department">Department: </label>
           <input
+            id="department"
             type="text"
             name="department"
             value={formData.department}
@@ -157,6 +167,7 @@ const AddEmployee = ({ onAddEmployee, apiUrl }) => {
         <div>
           <label htmlFor="skills">Skills: </label>
           <input
+            id="skills"
             type="text"
             name="skills"
             value={formData.skills}
@@ -166,7 +177,7 @@ const AddEmployee = ({ onAddEmployee, apiUrl }) => {
         </div>
         <button type="submit">Add</button>
       </form>
-    </div>
+    </>
   );
 };
 

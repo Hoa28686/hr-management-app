@@ -41,12 +41,11 @@ function App() {
               <PersonList
                 employeeData={employeeData}
                 handleInfoChange={handleInfoChange}
-                // onToggleChange={handleToggleField}
-                // onPriceChange={handlePriceChange}
+                error={error}
+                loading={loading}
               />
             }
           />
-          {/* <Route path="/books/:id" element={<BookDetail />} /> */}
           <Route
             path="/add-employee"
             element={

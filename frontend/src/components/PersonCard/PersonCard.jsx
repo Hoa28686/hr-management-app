@@ -16,6 +16,8 @@ const PersonCard = ({
   department,
   skills,
   handleInfoChange,
+  error,
+  loading,
 }) => {
   const [Editing, setEditing] = useState(false);
 
@@ -47,7 +49,7 @@ const PersonCard = ({
       alert("All fields are required.");
       return;
     }
-    
+
     if (!Array.isArray(newInfo.skills)) {
       newInfo.skills = newInfo.skills.split(",").map((skill) => skill.trim());
     }
@@ -80,6 +82,8 @@ const PersonCard = ({
       : animal;
   }
 
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>{error.message}</div>;
   return (
     <div className="person-card">
       <p>

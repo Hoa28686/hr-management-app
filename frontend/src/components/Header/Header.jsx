@@ -1,11 +1,8 @@
 import { NavLink, Link } from "react-router";
 import "./Header.css";
-import {
-  RiCloseLine,
-  RiMenuLine,
-  RiMoonLine,
-  RiSunLine,
-} from "@remixicon/react";
+import { IoClose } from "react-icons/io5";
+import { FiMoon, FiSun } from "react-icons/fi";
+import { LuMenu } from "react-icons/lu";
 import { useEffect, useState } from "react";
 
 const Header = () => {
@@ -30,45 +27,52 @@ const Header = () => {
     }
     setDarkTheme(!darkTheme);
   };
+
   const hideMenu = () => {
     setShowMenu(false);
   };
+  
   return (
     <header className="header">
       <div className=" container">
-        <h1>
-          <Link to="/" className="nav-logo">
-            HR APP
-          </Link>
-        </h1>
+        <Link to="/" className="nav-logo">
+          HR APP
+        </Link>
 
         <nav className={`nav-menu ${showMenu ? "show-menu" : ""}`}>
           <ul className="nav-list">
-            <NavLink className="nav-link" to="/" onClick={hideMenu}>
-              Home
-            </NavLink>
-            <NavLink className="nav-link" to="/add-employee" onClick={hideMenu}>
-              Add
-            </NavLink>
-            <NavLink className="nav-link" to="/about" onClick={hideMenu}>
-              About
-            </NavLink>
+            <li>
+              <NavLink className="nav-link" to="/" onClick={hideMenu}>
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className="nav-link"
+                to="/add-employee"
+                onClick={hideMenu}
+              >
+                Add
+              </NavLink>
+            </li>
+            <li>
+              <NavLink className="nav-link" to="/about" onClick={hideMenu}>
+                About
+              </NavLink>
+            </li>
           </ul>
 
           {/* close button */}
-          <RiCloseLine className="nav-close" onClick={hideMenu} />
+          <IoClose className="nav-close" onClick={hideMenu} />
         </nav>
 
         <div id="nav-button">
           {darkTheme ? (
-            <RiSunLine className="nav-theme" onClick={toggleTheme} />
+            <FiSun className="nav-theme" onClick={toggleTheme} />
           ) : (
-            <RiMoonLine className="nav-theme" onClick={toggleTheme} />
+            <FiMoon className="nav-theme" onClick={toggleTheme} />
           )}
-          <RiMenuLine
-            className="nav-mini-menu"
-            onClick={() => setShowMenu(true)}
-          />
+          <LuMenu className="nav-mini-menu" onClick={() => setShowMenu(true)} />
         </div>
       </div>
     </header>

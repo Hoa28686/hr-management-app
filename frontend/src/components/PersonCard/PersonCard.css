@@ -6,15 +6,15 @@
   padding: 1.5rem;
   text-align: left;
   width: 25rem;
-  background: var(--body-color);
-  transition: transform 0.3s;
+  background: var(--body-background);
   text-transform: capitalize;
   position: relative;
+  transition: transform 0.3s;
 }
 .email {
   text-transform: none;
 }
-.person:hover {
+.person-card:hover {
   transform: var(--scale);
   cursor: pointer;
 }
@@ -23,7 +23,7 @@
   text-align: right;
 }
 .personCard-footer {
-  border-top: 1px solid grey;
+  border-top: var(--border);
   text-align: right;
   padding-top: 0.5rem;
   margin-top: 1rem;
@@ -31,6 +31,7 @@
 .personCard-footer button {
   background: none;
   border: none;
+  box-shadow: none;
 }
 
 .row,
@@ -42,7 +43,6 @@
 
 .editInfo input,
 .editInfo textarea {
-  font-size: 1rem;
   padding: 0.3rem;
   border: 1px solid grey;
   border-radius: 0.2rem;
@@ -72,7 +72,7 @@
   position: absolute;
   color: black;
   right: -1.5rem;
-  top: -1rem;
+  top: -2rem;
   padding: 0.5rem;
   box-shadow: var(--shadow);
   border-radius: var(--border-radius);
