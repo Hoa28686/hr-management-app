@@ -1,4 +1,4 @@
-footer {
+.footer {
   height: 3rem;
   background: var(--header-background);
   display: flex;
