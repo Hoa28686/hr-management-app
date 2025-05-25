@@ -18,7 +18,7 @@ export const animalToEmoji = {
   chicken: "🐔",
   penguin: "🐧",
   bird: "🐦",
-  baby_chick: "🐤",
+  chick: "🐤",
   hatching_chick: "🐣",
   sheep: "🐑",
   elephant: "🐘",

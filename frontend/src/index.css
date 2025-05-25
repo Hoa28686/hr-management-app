@@ -16,12 +16,14 @@
   --body-font: "Poppins", sans-serif;
   --second-font: "Mochiy Pop One", system-ui, sans-serif;
   --logo-size: 1.75rem;
-  --title-size: 1.2rem;
+  --title-size: 1.5rem;
+  --sub-title: 1.2rem;
   --normal-font-size: 1rem;
 
   /* larger font size for big screen */
   --logo-size-large: 2rem;
-  --title-size-large: 1.5rem;
+  --title-size-large: 1.7rem;
+  --sub-title-large: 1.5rem;
   --normal-font-size-large: 1.2rem;
 
   /* z index */
@@ -127,6 +129,7 @@ ul {
   :root {
     --logo-size: var(--logo-size-large);
     --title-size: var(--title-size-large);
+    --sub-title: var(--sub-title-large);
     --normal-font-size: var(--normal-font-size-large);
   }
 }

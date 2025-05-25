@@ -1,43 +1,48 @@
 import styles from "./About.module.css";
 import { FiLink } from "react-icons/fi";
+import { FaLongArrowAltRight } from "react-icons/fa";
 const About = () => {
   return (
     <>
       <h1>HR Application</h1>
       <div className="container">
         <p>
-          This is a simple HR application that allows users to manage, add and
+          This is a simple HR application that allows users to manage, add, and
           edit employees. It is a school project designed to demonstrate what I
           have learned in React, through components, routing, state management
           and APIs. The app is deployed using Render.
         </p>
 
-        <section>
-          <h2>Links and Live Page</h2>
+        <section className={styles.section}>
+          <h2 className={styles.sectionTitle}>
+            <FiLink /> Links and Live Page
+          </h2>
           <ul>
-            <li className={styles.pageLink}>
+            <li>
               <a
+                className={styles.pageLink}
                 href="https://react-hr-app-myzr.onrender.com/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Frontend <FiLink />
+                Frontend
               </a>
             </li>
-            <li className={styles.pageLink}>
+            <li>
               <a
+                className={styles.pageLink}
                 href="https://react-hr-app.onrender.com/employees"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Backend - JSON Server <FiLink />
+                Backend (JSON Server)
               </a>
             </li>
           </ul>
         </section>
-        <section>
-          <h2>Features Included</h2>
-          <ul>
+        <section className={styles.section}>
+          <h2 className={styles.sectionTitle}>📝 Features Included </h2>
+          <ul className={styles.sectionList}>
             <li>Fetch data from API and display a list of employees</li>
             <li>Edit employee salary, location, department and skills</li>
             <li>Add new employee through a form</li>
@@ -46,16 +51,17 @@ const About = () => {
               duration
             </li>
             <li>
-              Present the employee's favorite animal as an emoji, if available
+              Display the employee's favorite animal as an emoji, if available
+              🐬🐣🐾
             </li>
             <li>
-              Navigate between Home, Add and About page using React Router{" "}
+              Navigate between Home, Add and About pages using React Router
             </li>
           </ul>
         </section>
-        <section>
-          <h2>Technologies Used</h2>
-          <ul>
+        <section className={styles.section}>
+          <h2 className={styles.sectionTitle}>🛠️ Technologies Used </h2>
+          <ul className={styles.sectionList}>
             <li>React (with Hooks)</li>
             <li>React Router</li>
             <li>Axios (API calls)</li>

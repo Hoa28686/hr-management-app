@@ -1,0 +1,22 @@
+.section {
+  margin-block: 2rem;
+}
+.sectionTitle {
+  font-size: var(--sub-title);
+  margin-bottom: 0.5rem;
+}
+
+.pageLink {
+  color: var(--hover-color);
+  font-weight: bold;
+}
+
+.pageLink:visited {
+  color: orange;
+}
+
+.sectionList {
+  list-style: square;
+  padding-left: 2rem;
+  line-height: 1.8;
+}
