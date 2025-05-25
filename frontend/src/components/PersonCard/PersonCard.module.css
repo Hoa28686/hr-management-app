@@ -59,8 +59,8 @@
   justify-content: center;
   flex-wrap: wrap;
 }
-.message {
-  color: green;
+.error {
+  color: orange;
 }
 .personCard-footer .disabled {
   color: grey;
