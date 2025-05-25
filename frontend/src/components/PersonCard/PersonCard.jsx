@@ -16,8 +16,7 @@ const PersonCard = ({
   department,
   skills,
   handleInfoChange,
-  error,
-  loading,
+
 }) => {
   const [Editing, setEditing] = useState(false);
   const [saveMessage, setSaveMessage] = useState("");
@@ -84,8 +83,7 @@ const PersonCard = ({
       : animal;
   }
 
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div className={styles.error}>Error: {error.message}</div>;
+
   return (
     <div className={styles["person-card"]}>
       <p>

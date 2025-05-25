@@ -7,10 +7,11 @@ const useAxios = () => {
   const get = async (url) => {
     try {
       const res = await axios.get(url);
-      setLoading(false);
       return res.data;
     } catch (e) {
       setError(e);
+    } finally {
+      setLoading(false);
     }
   };
 

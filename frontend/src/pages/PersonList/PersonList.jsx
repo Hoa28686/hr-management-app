@@ -7,6 +7,11 @@ import { useState } from "react";
 const PersonList = ({ employeeData, handleInfoChange, error, loading }) => {
   const [searchValue, setsearchValue] = useState("");
 
+
+
+  if (loading) return <h1>Loading...</h1>;
+  if (error) return <h1 className={styles.error}>Error: {error.message}</h1>;
+
   return (
     <>
       <h1>Employee List</h1>
@@ -14,13 +19,7 @@ const PersonList = ({ employeeData, handleInfoChange, error, loading }) => {
       {/* filter by department or location */}
       <div className={styles.personList}>
         {employeeData.map((em) => (
-          <PersonCard
-            key={em.id}
-            {...em}
-            handleInfoChange={handleInfoChange}
-            error={error}
-            loading={loading}
-          />
+          <PersonCard key={em.id} {...em} handleInfoChange={handleInfoChange} />
         ))}
       </div>
       <ScrollToTop>
