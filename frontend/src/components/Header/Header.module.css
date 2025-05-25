@@ -63,7 +63,7 @@
 
 .nav-link {
   color: var(--text-color);
-  font-weight: var(--font-bold);
+  font-weight: bold;
   font-size: var(--h3-font-size);
   transition: color 0.2s;
 }

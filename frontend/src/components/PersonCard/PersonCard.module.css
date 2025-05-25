@@ -3,9 +3,9 @@
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
   margin: 2rem;
-  padding: 1.5rem;
+  padding: 1rem;
   text-align: left;
-  width: 25rem;
+  max-width: 25rem;
   background: var(--body-background);
   text-transform: capitalize;
   position: relative;
@@ -28,33 +28,44 @@
   padding-top: 0.5rem;
   margin-top: 1rem;
 }
-.personCard-footer button {
+.button {
   background: none;
   border: none;
-  box-shadow: none;
+  color: var(--text-color);
+  padding: 0.6rem 1.2rem;
+  font-weight: bold;
+  margin: 1rem;
+  transition: color 0.2s transform 0.8s;
 }
 
+.button:hover {
+  color: var(--hover-color);
+  transform: var(--scale);
+}
 .row,
-.person-card p {
+.person-card :global(p) {
   display: flex;
   justify-content: space-between;
   margin: 0.3rem 0;
 }
-
-.editInfo input,
-.editInfo textarea {
+.row {
+  align-items: center;
+}
+.input,
+.textArea {
+  min-width: 12rem;
   padding: 0.3rem;
   border: 1px solid grey;
   border-radius: 0.2rem;
 }
-.editInfo textarea {
-  height: 5rem;
+.textarea {
+  height: 6rem;
 }
 .name {
   font-weight: bold;
   font-size: 1.5rem;
 }
-.list {
+.personList {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -62,12 +73,14 @@
 .error {
   color: orange;
 }
-.personCard-footer .disabled {
-  color: grey;
+.personCard-footer:hover {
+  color: green;
 }
-.personCard-footer .disabled:hover {
+.disabled {
   color: grey;
+  pointer-events: none; /* disables interaction */
 }
+
 .schedule {
   position: absolute;
   color: black;

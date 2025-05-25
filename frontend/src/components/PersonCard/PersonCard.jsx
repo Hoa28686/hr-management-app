@@ -85,7 +85,7 @@ const PersonCard = ({
   if (loading) return <div>Loading...</div>;
   if (error) return <div className={styles.error}>Error: {error.message}</div>;
   return (
-    <div className={styles[person - card]}>
+    <div className={styles["person-card"]}>
       <p>
         <span className={styles.name}>{name}</span>
       </p>
@@ -115,6 +115,7 @@ const PersonCard = ({
                 name="salary"
                 value={newInfo.salary}
                 onChange={handleChange}
+                className={styles.input}
               />
             </div>
             <div className={styles.row}>
@@ -124,6 +125,7 @@ const PersonCard = ({
                 name="location"
                 value={newInfo.location}
                 onChange={handleChange}
+                className={styles.input}
               />
             </div>
             <div className={styles.row}>
@@ -133,6 +135,7 @@ const PersonCard = ({
                 name="department"
                 value={newInfo.department}
                 onChange={handleChange}
+                className={styles.input}
               />
             </div>
             <div className={styles.row}>
@@ -142,21 +145,27 @@ const PersonCard = ({
                 name="skills"
                 value={newInfo.skills}
                 onChange={handleChange}
+                className={styles.textArea}
               ></textarea>
             </div>
             <p style={{ color: "grey", textTransform: "none" }}>
               (Enter skills in comma-seperated string, e.g., "leadership,
               communication")
             </p>
-            <div className={styles[personCard - footer]}>
+            <div className={styles["personCard-footer"]}>
               <button
                 type="submit"
                 disabled={isSaveDisabled}
-                className={isSaveDisabled ? "disabled" : ""}
+                className={`
+                  ${styles.button} + ${isSaveDisabled ? styles.disabled : ""}`}
               >
                 Save
               </button>
-              <button type="button" onClick={handleCancel}>
+              <button
+                type="button"
+                onClick={handleCancel}
+                className={styles.button}
+              >
                 Cancel
               </button>
             </div>
@@ -178,16 +187,20 @@ const PersonCard = ({
           </p>
 
           {[5, 10, 15].includes(workingYear) && (
-            <p className="schedule recognition">
+            <p className={`${styles.schedule} ${styles.recognition}`}>
               🎉 Schedule recognition meeting.
             </p>
           )}
           {workingYear <= 0.5 && (
-            <p className="schedule probation">🔔 Schedule probation review.</p>
+            <p className={`${styles.schedule} ${styles.probation}`}>
+              🔔 Schedule probation review.
+            </p>
           )}
-          <div className={styles[personCard - footer]}>
-            <button onClick={() => setEditing(true)}>Edit</button>
-          </div>
+
+          <div className={styles["personCard-footer"]}></div>
+          <button onClick={() => setEditing(true)} className={styles.button}>
+            Edit
+          </button>
         </div>
       )}
     </div>
