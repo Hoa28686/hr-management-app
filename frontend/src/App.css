@@ -6,9 +6,7 @@ main {
   min-height: calc(100vh);
   margin-block: 2rem;
 }
-html {
-  scroll-behavior: smooth;
-}
+
 
 /* .container {
   width: 90%;

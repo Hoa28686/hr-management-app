@@ -1,22 +1,23 @@
-import axios from "axios";
 import "./AddEmployee.css";
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import useAxios from "../hooks/useAxios";
 
+const emptyForm = {
+  name: "",
+  title: "",
+  salary: "",
+  phone: "",
+  email: "",
+  animal: "",
+  startDate: "",
+  location: "",
+  department: "",
+  skills: "",
+};
+
 const AddEmployee = ({ onAddEmployee, apiUrl }) => {
-  const [formData, setFormData] = useState({
-    name: "",
-    title: "",
-    salary: "",
-    phone: "",
-    email: "",
-    animal: "",
-    startDate: "",
-    location: "",
-    department: "",
-    skills: "",
-  });
+  const [formData, setFormData] = useState(emptyForm);
   const navigate = useNavigate();
   const { post } = useAxios();
 
@@ -26,45 +27,42 @@ const AddEmployee = ({ onAddEmployee, apiUrl }) => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
+  const newEmployee = Object.fromEntries(
+    Object.entries(formData).map(([key, value]) => {
+      let formatedValue;
+      switch (key) {
+        case "salary":
+          formatedValue = parseFloat(parseFloat(value).toFixed(2));
+          break;
+        case "skills":
+          formatedValue = value.split(",").map((skill) => skill.trim());
+          break;
+        case "email":
+          formatedValue = value;
+          break;
+        default:
+          formatedValue =
+            typeof value === "string" ? value.toLowerCase() : value;
+          break;
+      }
+
+      return [key, formatedValue];
+    })
+  );
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const newEmployee = Object.fromEntries(
-      Object.entries(formData).map(([key, value]) => {
-        let formatedValue =
-          key === "email"
-            ? value
-            : key === "salary"
-            ? parseFloat(parseFloat(value).toFixed(2))
-            : key === "skills"
-            ? value.split(",").map((skill) => skill.trim())
-            : typeof value === "string"
-            ? value.toLowerCase()
-            : value;
-        return [key, formatedValue];
-      })
-    );
     const addedNewEmployee = await post(apiUrl, newEmployee);
     onAddEmployee(addedNewEmployee);
 
-    setFormData({
-      name: "",
-      title: "",
-      salary: "",
-      phone: "",
-      email: "",
-      animal: "",
-      startDate: "",
-      location: "",
-      department: "",
-      skills: "",
-    });
+    setFormData(emptyForm);
     navigate("/");
-    // console.log(newEmployee);
   };
+
   return (
-    <>
-      <form onSubmit={handleSubmit} className="addForm">
+    <div >
+      <form  onSubmit={handleSubmit} className="addForm container">
         <div>
           <label htmlFor="name">Name: </label>
           <input
@@ -72,6 +70,7 @@ const AddEmployee = ({ onAddEmployee, apiUrl }) => {
             name="name"
             value={formData.name}
             onChange={handleChange}
+            required
           />
         </div>
         <div>
@@ -81,6 +80,7 @@ const AddEmployee = ({ onAddEmployee, apiUrl }) => {
             name="title"
             value={formData.title}
             onChange={handleChange}
+            required
           />
         </div>
         <div>
@@ -91,6 +91,7 @@ const AddEmployee = ({ onAddEmployee, apiUrl }) => {
             name="salary"
             value={formData.salary}
             onChange={handleChange}
+            required
           />
         </div>
         <div>
@@ -100,6 +101,7 @@ const AddEmployee = ({ onAddEmployee, apiUrl }) => {
             name="phone"
             value={formData.phone}
             onChange={handleChange}
+            required
           />
         </div>
         <div>
@@ -109,6 +111,7 @@ const AddEmployee = ({ onAddEmployee, apiUrl }) => {
             name="email"
             value={formData.email}
             onChange={handleChange}
+            required
           />
         </div>
         <div>
@@ -118,6 +121,7 @@ const AddEmployee = ({ onAddEmployee, apiUrl }) => {
             name="animal"
             value={formData.animal}
             onChange={handleChange}
+            required
           />
         </div>
         <div>
@@ -127,6 +131,7 @@ const AddEmployee = ({ onAddEmployee, apiUrl }) => {
             name="startDate"
             value={formData.startDate}
             onChange={handleChange}
+            required
           />
         </div>
         <div>
@@ -136,6 +141,7 @@ const AddEmployee = ({ onAddEmployee, apiUrl }) => {
             name="location"
             value={formData.location}
             onChange={handleChange}
+            required
           />
         </div>
         <div>
@@ -145,6 +151,7 @@ const AddEmployee = ({ onAddEmployee, apiUrl }) => {
             name="department"
             value={formData.department}
             onChange={handleChange}
+            required
           />
         </div>
         <div>
@@ -154,11 +161,12 @@ const AddEmployee = ({ onAddEmployee, apiUrl }) => {
             name="skills"
             value={formData.skills}
             onChange={handleChange}
+            required
           />
         </div>
         <button type="submit">Add</button>
       </form>
-    </>
+    </div>
   );
 };
 

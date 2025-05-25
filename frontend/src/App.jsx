@@ -5,14 +5,13 @@ import Root from "./pages/Root";
 import About from "./pages/About";
 import PersonList from "./pages/PersonList";
 import AddEmployee from "./pages/AddEmployee";
-// import { employees } from "./data/employeesData";
-import axios from "axios";
 import useAxios from "./hooks/useAxios";
 
 function App() {
   const [employeeData, setEmployeeData] = useState([]);
-  const { get, patch, error, loading, data } = useAxios();
+  const { get, patch, error, loading } = useAxios();
   const apiUrl = "https://react-hr-app.onrender.com/employees";
+
   useEffect(() => {
     const fetchData = async (apirurl) => {
       setEmployeeData(await get(apiUrl));
@@ -21,11 +20,12 @@ function App() {
   }, []);
 
   const handleInfoChange = async (id, newInfo) => {
-    const updatedInfo = patch(apiUrl, id, newInfo);
+    const updatedInfo = await patch(apiUrl, id, newInfo);
     setEmployeeData((prev) =>
       prev.map((em) => (em.id === id ? updatedInfo : em))
     );
   };
+
   const addNewEmployee = (newEmployee) => {
     setEmployeeData((prev) => [...prev, newEmployee]);
   };

@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { animalToEmoji } from "../../data/animalToEmoji.js";
 import "./PersonCard.css";
-import axios from "axios";
 import _ from "lodash";
 
 const PersonCard = ({
@@ -29,9 +28,7 @@ const PersonCard = ({
     let formatedValue = value.toLowerCase();
 
     formatedValue =
-      name === "email"
-        ? value
-        : name === "salary"
+      name === "salary"
         ? parseFloat(parseFloat(formatedValue).toFixed(2))
         : formatedValue;
 
@@ -41,9 +38,20 @@ const PersonCard = ({
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    if (
+      !newInfo.salary ||
+      !newInfo.location ||
+      !newInfo.department ||
+      !newInfo.skills
+    ) {
+      alert("All fields are required.");
+      return;
+    }
+    
     if (!Array.isArray(newInfo.skills)) {
       newInfo.skills = newInfo.skills.split(",").map((skill) => skill.trim());
     }
+
     handleInfoChange(id, newInfo);
     setEditing(false);
   };

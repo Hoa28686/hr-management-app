@@ -1,6 +1,6 @@
 .person-card {
   border: 0.1rem solid rgb(209, 208, 208);
-  border-radius: var(--radius);
+  border-radius: var(--border-radius);
   box-shadow: var(--shadow);
   margin: 2rem;
   padding: 1.5rem;
@@ -15,7 +15,7 @@
   text-transform: none;
 }
 .person:hover {
-  transform: scale(1.05);
+  transform: var(--scale);
   cursor: pointer;
 }
 
@@ -29,16 +29,10 @@
   margin-top: 1rem;
 }
 .personCard-footer button {
-  color: black;
   background: none;
   border: none;
-  font-size: inherit;
-  transition: transform 0.3s;
 }
-.personCard-footer button:hover {
-  color: green;
-  transform: scale(1.1);
-}
+
 .row,
 .person-card p {
   display: flex;
@@ -76,12 +70,12 @@
 }
 .schedule {
   position: absolute;
+  color: black;
   right: -1.5rem;
   top: -1rem;
   padding: 0.5rem;
   box-shadow: var(--shadow);
-  border-radius: var(--radius);
-  /* z-index: 2rem; */
+  border-radius: var(--border-radius);
 }
 .recognition {
   background: greenyellow;

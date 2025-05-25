@@ -1,5 +1,111 @@
-@import url("https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin-bottom: 2rem;
+  background-color: var(--header-background);
+  z-index: var(--z);
+  transition: box-shadow 0.4s, background-color 0.4s;
+}
+.header .container {
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
+.active {
+  color: green;
+  text-decoration: underline;
+}
+
+.nav-logo {
+  font-family: var(--second-font);
+  font-size: var(--h2-font-size);
+  color: var(--title-color);
+}
+
+.nav-close,
+.nav-theme,
+.nav-mini-menu {
+  width: var(--h2-font-size);
+  height: var(--h2-font-size);
+  color: var(--title-color);
+  cursor: pointer;
+}
+#nav-button {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* show header shadow when scrolling */
+.show-shadow {
+  box-shadow: var(--shadow);
+}
+
+/* ___________________ nav bar for mobile devices ____________*/
+
+@media screen and (max-width: 1000px) {
+  .nav-menu {
+    position: fixed;
+    top: -200%;
+    right: 0;
+    background-color: var(--header-background);
+    width: 100%;
+    box-shadow: var(--shadow);
+    padding: 2.5rem 1rem;
+    transition: top 0.6s;
+  }
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  row-gap: var(--gap);
+}
+
+.nav-link {
+  color: var(--text-color);
+  font-weight: var(--font-bold);
+  font-size: var(--h3-font-size);
+  transition: color 0.2s;
+}
+
+.nav-link:hover {
+  color: var(--hover-color);
+}
+
+.nav-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+}
+
+/* _________show menu when click_________ */
+.show-menu {
+  top: 0;
+}
+
+/* _________breakpoint for desktop_________ */
+/* for desktop */
+@media screen and (min-width: 992px) {
+  .nav-close,
+  .nav-mini-menu {
+    display: none;
+  }
+
+  .nav-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+}
+
+/* 
 header {
   background: var(--background);
   height: 5rem;
@@ -23,16 +129,4 @@ ul {
   font-family: "Cherry Bomb One", system-ui;
 }
 
-a {
-  text-decoration: none;
-  margin: 1rem;
-  color: black;
-}
-
-a:hover {
-  color: green;
-}
-.active {
-  color: green;
-  text-decoration: underline;
-}
+*/

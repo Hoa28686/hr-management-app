@@ -5,19 +5,21 @@
 }
 
 .addForm div {
+  width: 100%;
   display: flex;
-  text-align: left;
+  align-items: center;
+  justify-content: center;
   margin: 0.2rem;
 }
 
 .addForm label {
-  width: 8rem;
+  width: 30%;
 }
 
 .addForm input {
-  width: 15rem;
-  border-radius: var(--radius);
+  width: 70%;
   border: var(--border);
+  border-radius: 0.2rem;
   padding: 0.5rem;
 }
 
@@ -25,4 +27,8 @@
   outline: 1px solid green;
 }
 
-
+@media screen and (min-width: 768px) {
+  .addForm div {
+    width: 80%;
+  }
+}
