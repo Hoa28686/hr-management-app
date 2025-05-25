@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router";
 import "./App.css";
 import Root from "./pages/Root";
-import About from "./pages/About";
-import PersonList from "./pages/PersonList";
-import AddEmployee from "./pages/AddEmployee";
+import About from "./pages/About/About";
+import PersonList from "./pages/PersonList/PersonList";
+import AddEmployee from "./pages/AddEmployee/AddEmployee";
 import useAxios from "./hooks/useAxios";
 
 function App() {

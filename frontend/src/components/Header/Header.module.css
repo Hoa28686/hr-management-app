@@ -14,11 +14,6 @@
   align-items: center;
 }
 
-.active {
-  color: green;
-  text-decoration: underline;
-}
-
 .nav-logo {
   font-family: var(--second-font);
   font-size: var(--logo-size);
@@ -33,7 +28,7 @@
   color: var(--title-color);
   cursor: pointer;
 }
-#nav-button {
+.nav-button {
   display: flex;
   justify-content: center;
   gap: 1rem;

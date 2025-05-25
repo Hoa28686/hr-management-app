@@ -19,7 +19,7 @@
   cursor: pointer;
 }
 
-.person-card p span {
+.span {
   text-align: right;
 }
 .personCard-footer {
@@ -28,6 +28,7 @@
   padding-top: 0.5rem;
   margin-top: 1rem;
 }
+
 .button {
   background: none;
   border: none;
@@ -69,6 +70,9 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+}
+.success {
+  color: green;
 }
 .error {
   color: orange;

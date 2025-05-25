@@ -1,7 +1,7 @@
 import styles from "./AddEmployee.module.css";
 import { useState } from "react";
 import { useNavigate } from "react-router";
-import useAxios from "../hooks/useAxios";
+import useAxios from "../../hooks/useAxios";
 
 const emptyForm = {
   name: "",
@@ -23,32 +23,34 @@ const AddEmployee = ({ onAddEmployee, apiUrl }) => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const newEmployee = Object.fromEntries(
-    Object.entries(formData).map(([key, value]) => {
-      let formatedValue;
-      switch (key) {
-        case "salary":
-          formatedValue = parseFloat(parseFloat(value).toFixed(2));
-          break;
-        case "skills":
-          formatedValue = value.split(",").map((skill) => skill.trim());
-          break;
-        case "email":
-          formatedValue = value;
-          break;
-        default:
-          formatedValue =
-            typeof value === "string" ? value.toLowerCase() : value;
-          break;
-      }
+  const newEmployee = {
+    id: Date.now(),
+    ...Object.fromEntries(
+      Object.entries(formData).map(([key, value]) => {
+        let formatedValue;
+        switch (key) {
+          case "salary":
+            formatedValue = parseFloat(parseFloat(value).toFixed(2));
+            break;
+          case "skills":
+            formatedValue = value.split(",").map((skill) => skill.trim());
+            break;
+          case "email":
+            formatedValue = value;
+            break;
+          default:
+            formatedValue =
+              typeof value === "string" ? value.toLowerCase() : value;
+            break;
+        }
 
-      return [key, formatedValue];
-    })
-  );
+        return [key, formatedValue];
+      })
+    )
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -66,7 +68,7 @@ const AddEmployee = ({ onAddEmployee, apiUrl }) => {
       <form onSubmit={handleSubmit} className={`${styles.addForm} container`}>
         <div className={styles.addFormRow}>
           <label htmlFor="name" className={styles.label}>
-            Name:{" "}
+            Name:
           </label>
           <input
             id="name"
@@ -80,7 +82,7 @@ const AddEmployee = ({ onAddEmployee, apiUrl }) => {
         </div>
         <div className={styles.addFormRow}>
           <label htmlFor="title" className={styles.label}>
-            Title:{" "}
+            Title:
           </label>
           <input
             id="title"
@@ -94,7 +96,7 @@ const AddEmployee = ({ onAddEmployee, apiUrl }) => {
         </div>
         <div className={styles.addFormRow}>
           <label htmlFor="salary" className={styles.label}>
-            Salary:{" "}
+            Salary:
           </label>
           <input
             id="salary"
@@ -109,7 +111,7 @@ const AddEmployee = ({ onAddEmployee, apiUrl }) => {
         </div>
         <div className={styles.addFormRow}>
           <label htmlFor="phone" className={styles.label}>
-            Phone:{" "}
+            Phone:
           </label>
           <input
             id="phone"
@@ -123,7 +125,7 @@ const AddEmployee = ({ onAddEmployee, apiUrl }) => {
         </div>
         <div className={styles.addFormRow}>
           <label htmlFor="email" className={styles.label}>
-            Email:{" "}
+            Email:
           </label>
           <input
             id="email"
@@ -137,7 +139,7 @@ const AddEmployee = ({ onAddEmployee, apiUrl }) => {
         </div>
         <div className={styles.addFormRow}>
           <label htmlFor="animal" className={styles.label}>
-            Animal:{" "}
+            Animal:
           </label>
           <input
             id="animal"
@@ -151,7 +153,7 @@ const AddEmployee = ({ onAddEmployee, apiUrl }) => {
         </div>
         <div className={styles.addFormRow}>
           <label htmlFor="startDate" className={styles.label}>
-            Start date:{" "}
+            Start date:
           </label>
           <input
             id="startDate"
@@ -165,7 +167,7 @@ const AddEmployee = ({ onAddEmployee, apiUrl }) => {
         </div>
         <div className={styles.addFormRow}>
           <label htmlFor="location" className={styles.label}>
-            Location:{" "}
+            Location:
           </label>
           <input
             id="location"
@@ -179,7 +181,7 @@ const AddEmployee = ({ onAddEmployee, apiUrl }) => {
         </div>
         <div className={styles.addFormRow}>
           <label htmlFor="department" className={styles.label}>
-            Department:{" "}
+            Department:
           </label>
           <input
             id="department"
@@ -193,7 +195,7 @@ const AddEmployee = ({ onAddEmployee, apiUrl }) => {
         </div>
         <div className={styles.addFormRow}>
           <label htmlFor="skills" className={styles.label}>
-            Skills:{" "}
+            Skills:
           </label>
           <input
             id="skills"

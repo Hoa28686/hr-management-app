@@ -20,7 +20,7 @@ const PersonCard = ({
   loading,
 }) => {
   const [Editing, setEditing] = useState(false);
-
+  const [saveMessage, setSaveMessage] = useState("");
   // object shorthand when key name = value's variable name
   const prevInfo = { salary, location, department, skills };
   const [newInfo, setNewInfo] = useState(prevInfo);
@@ -56,6 +56,8 @@ const PersonCard = ({
 
     handleInfoChange(id, newInfo);
     setEditing(false);
+    setSaveMessage("Saved successfully!");
+    setTimeout(() => setSaveMessage(""), 1500);
   };
 
   // need to: npm install lodash
@@ -66,10 +68,10 @@ const PersonCard = ({
     setEditing(false);
   };
 
-  // schedule meeting or review
+  // message for recognition or probation
   const now = new Date();
-  const date = new Date(startDate);
-  const difference = (now - date) / (1000 * 60 * 60 * 24 * 365);
+  const then = new Date(startDate);
+  const difference = (now - then) / (1000 * 60 * 60 * 24 * 365);
   const workingYear =
     difference >= 1 ? Math.floor(difference) : difference.toFixed(1);
 
@@ -90,19 +92,19 @@ const PersonCard = ({
         <span className={styles.name}>{name}</span>
       </p>
       <p>
-        Position: <span>{title}</span>
+        Position: <span className={styles.span}>{title}</span>
       </p>
       <p>
-        Phone: <span>{phone}</span>
+        Phone: <span className={styles.span}>{phone}</span>
       </p>
       <p className={styles.email}>
-        Email: <span>{email}</span>
+        Email: <span className={styles.span}>{email}</span>
       </p>
       <p>
-        Favorite animal: <span>{animalIcon}</span>
+        Favorite animal: <span className={styles.span}>{animalIcon}</span>
       </p>
       <p>
-        Since: <span>{startDate}</span>
+        Since: <span className={styles.span}>{startDate}</span>
       </p>
       {Editing ? (
         <div>
@@ -174,16 +176,17 @@ const PersonCard = ({
       ) : (
         <div>
           <p>
-            Salary: <span>€{salary}/month</span>
+            Salary: <span className={styles.span}>€{salary}/month</span>
           </p>
           <p>
-            Location: <span>{location}</span>
+            Location: <span className={styles.span}>{location}</span>
           </p>
           <p>
-            Department: <span>{department}</span>
+            Department: <span className={styles.span}>{department}</span>
           </p>
           <p>
-            Skills: <span>{skills && skills.join(", ")}</span>
+            Skills:{" "}
+            <span className={styles.span}>{skills && skills.join(", ")}</span>
           </p>
 
           {[5, 10, 15].includes(workingYear) && (
@@ -197,10 +200,12 @@ const PersonCard = ({
             </p>
           )}
 
-          <div className={styles["personCard-footer"]}></div>
-          <button onClick={() => setEditing(true)} className={styles.button}>
-            Edit
-          </button>
+          <div className={styles["personCard-footer"]}>
+            <button onClick={() => setEditing(true)} className={styles.button}>
+              Edit
+            </button>
+            {saveMessage && <p className={styles.success}>{saveMessage}</p>}
+          </div>
         </div>
       )}
     </div>

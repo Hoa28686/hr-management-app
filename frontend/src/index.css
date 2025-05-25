@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Poppins&display=swap");
 
 /*_________css variables_________*/
 :root {
@@ -14,7 +14,7 @@
 
   /* font */
   --body-font: "Poppins", sans-serif;
-  --second-font: "Cherry Bomb One", system-ui, sans-serif;
+  --second-font: "Mochiy Pop One", system-ui, sans-serif;
   --logo-size: 1.75rem;
   --title-size: 1.2rem;
   --normal-font-size: 1rem;
@@ -79,7 +79,10 @@ a {
 a {
   text-decoration: none;
 }
-
+.active {
+  color: green;
+  text-decoration: underline;
+}
 h1 {
   color: var(--title-color);
   font-size: var(--title-size);
@@ -111,12 +114,6 @@ ul {
 }
 
 /* ________ breakpoint ________*/
-/* for phone */
-/* @media screen and (min-width: 360px) {
-  .person-card {
-    max-width: 300px;
-  }
-} */
 /* for tablet */
 @media screen and (min-width: 768px) {
   .container {

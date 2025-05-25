@@ -34,7 +34,7 @@
   padding: 0.6rem 1.2rem;
   font-weight: bold;
   background-color: var(--hover-color);
-  margin: 1rem;
+  margin: 2rem;
   transition: color 0.2s transform 0.8s;
 }
 .button:hover {

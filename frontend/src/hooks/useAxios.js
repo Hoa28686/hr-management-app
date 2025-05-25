@@ -11,7 +11,6 @@ const useAxios = () => {
       return res.data;
     } catch (e) {
       setError(e);
-      setLoading(false);
     }
   };
 

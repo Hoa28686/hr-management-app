@@ -74,7 +74,7 @@ const Header = () => {
           <IoClose className={styles["nav-close"]} onClick={hideMenu} />
         </nav>
 
-        <div id="nav-button">
+        <div className={styles["nav-button"]}>
           {darkTheme ? (
             <FiSun className={styles["nav-theme"]} onClick={toggleTheme} />
           ) : (
