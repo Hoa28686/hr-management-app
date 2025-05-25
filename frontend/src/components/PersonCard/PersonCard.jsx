@@ -83,7 +83,7 @@ const PersonCard = ({
   }
 
   if (loading) return <div>Loading...</div>;
-  if (error) return <div>{error.message}</div>;
+  if (error) return <div>Error: {error.message}</div>;
   return (
     <div className="person-card">
       <p>

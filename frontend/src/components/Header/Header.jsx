@@ -1,5 +1,5 @@
 import { NavLink, Link } from "react-router";
-import "./Header.css";
+import styles from "./Header.module.css";
 import { IoClose } from "react-icons/io5";
 import { FiMoon, FiSun } from "react-icons/fi";
 import { LuMenu } from "react-icons/lu";
@@ -31,24 +31,28 @@ const Header = () => {
   const hideMenu = () => {
     setShowMenu(false);
   };
-  
+
   return (
-    <header className="header">
-      <div className=" container">
-        <Link to="/" className="nav-logo">
+    <header className={styles.header}>
+      <div className={styles.container}>
+        <Link to="/" className={styles["nav-logo"]}>
           HR APP
         </Link>
 
-        <nav className={`nav-menu ${showMenu ? "show-menu" : ""}`}>
-          <ul className="nav-list">
+        <nav
+          className={`${styles["nav-menu"]} ${
+            showMenu ? styles["show-menu"] : ""
+          }`}
+        >
+          <ul className={styles["nav-list"]}>
             <li>
-              <NavLink className="nav-link" to="/" onClick={hideMenu}>
+              <NavLink className={styles["nav-link"]} to="/" onClick={hideMenu}>
                 Home
               </NavLink>
             </li>
             <li>
               <NavLink
-                className="nav-link"
+                className={styles["nav-link"]}
                 to="/add-employee"
                 onClick={hideMenu}
               >
@@ -56,23 +60,30 @@ const Header = () => {
               </NavLink>
             </li>
             <li>
-              <NavLink className="nav-link" to="/about" onClick={hideMenu}>
+              <NavLink
+                className={styles["nav-link"]}
+                to="/about"
+                onClick={hideMenu}
+              >
                 About
               </NavLink>
             </li>
           </ul>
 
           {/* close button */}
-          <IoClose className="nav-close" onClick={hideMenu} />
+          <IoClose className={styles["nav-close"]} onClick={hideMenu} />
         </nav>
 
         <div id="nav-button">
           {darkTheme ? (
-            <FiSun className="nav-theme" onClick={toggleTheme} />
+            <FiSun className={styles["nav-theme"]} onClick={toggleTheme} />
           ) : (
-            <FiMoon className="nav-theme" onClick={toggleTheme} />
+            <FiMoon className={styles["nav-theme"]} onClick={toggleTheme} />
           )}
-          <LuMenu className="nav-mini-menu" onClick={() => setShowMenu(true)} />
+          <LuMenu
+            className={styles["nav-mini-menu"]}
+            onClick={() => setShowMenu(true)}
+          />
         </div>
       </div>
     </header>
