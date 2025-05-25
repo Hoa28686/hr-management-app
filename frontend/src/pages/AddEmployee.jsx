@@ -1,4 +1,4 @@
-import "./AddEmployee.css";
+import styles from "./AddEmployee.module.css";
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import useAxios from "../hooks/useAxios";
@@ -63,9 +63,11 @@ const AddEmployee = ({ onAddEmployee, apiUrl }) => {
   return (
     <>
       <h1>Add new employee</h1>
-      <form onSubmit={handleSubmit} className="addForm container">
-        <div>
-          <label htmlFor="name">Name: </label>
+      <form onSubmit={handleSubmit} className={`${styles.addForm} container`}>
+        <div className={styles.addFormRow}>
+          <label htmlFor="name" className={styles.label}>
+            Name:{" "}
+          </label>
           <input
             id="name"
             type="text"
@@ -73,10 +75,13 @@ const AddEmployee = ({ onAddEmployee, apiUrl }) => {
             value={formData.name}
             onChange={handleChange}
             required
+            className={styles.input}
           />
         </div>
-        <div>
-          <label htmlFor="title">Title: </label>
+        <div className={styles.addFormRow}>
+          <label htmlFor="title" className={styles.label}>
+            Title:{" "}
+          </label>
           <input
             id="title"
             type="text"
@@ -84,10 +89,13 @@ const AddEmployee = ({ onAddEmployee, apiUrl }) => {
             value={formData.title}
             onChange={handleChange}
             required
+            className={styles.input}
           />
         </div>
-        <div>
-          <label htmlFor="salary">Salary: </label>
+        <div className={styles.addFormRow}>
+          <label htmlFor="salary" className={styles.label}>
+            Salary:{" "}
+          </label>
           <input
             id="salary"
             type="number"
@@ -96,10 +104,13 @@ const AddEmployee = ({ onAddEmployee, apiUrl }) => {
             value={formData.salary}
             onChange={handleChange}
             required
+            className={styles.input}
           />
         </div>
-        <div>
-          <label htmlFor="phone">Phone: </label>
+        <div className={styles.addFormRow}>
+          <label htmlFor="phone" className={styles.label}>
+            Phone:{" "}
+          </label>
           <input
             id="phone"
             type="tel"
@@ -107,10 +118,13 @@ const AddEmployee = ({ onAddEmployee, apiUrl }) => {
             value={formData.phone}
             onChange={handleChange}
             required
+            className={styles.input}
           />
         </div>
-        <div>
-          <label htmlFor="email">Email: </label>
+        <div className={styles.addFormRow}>
+          <label htmlFor="email" className={styles.label}>
+            Email:{" "}
+          </label>
           <input
             id="email"
             type="email"
@@ -118,10 +132,13 @@ const AddEmployee = ({ onAddEmployee, apiUrl }) => {
             value={formData.email}
             onChange={handleChange}
             required
+            className={styles.input}
           />
         </div>
-        <div>
-          <label htmlFor="animal">Animal: </label>
+        <div className={styles.addFormRow}>
+          <label htmlFor="animal" className={styles.label}>
+            Animal:{" "}
+          </label>
           <input
             id="animal"
             type="text"
@@ -129,10 +146,13 @@ const AddEmployee = ({ onAddEmployee, apiUrl }) => {
             value={formData.animal}
             onChange={handleChange}
             required
+            className={styles.input}
           />
         </div>
-        <div>
-          <label htmlFor="startDate">Start date: </label>
+        <div className={styles.addFormRow}>
+          <label htmlFor="startDate" className={styles.label}>
+            Start date:{" "}
+          </label>
           <input
             id="startDate"
             type="date"
@@ -140,10 +160,13 @@ const AddEmployee = ({ onAddEmployee, apiUrl }) => {
             value={formData.startDate}
             onChange={handleChange}
             required
+            className={styles.input}
           />
         </div>
-        <div>
-          <label htmlFor="location">Location: </label>
+        <div className={styles.addFormRow}>
+          <label htmlFor="location" className={styles.label}>
+            Location:{" "}
+          </label>
           <input
             id="location"
             type="text"
@@ -151,10 +174,13 @@ const AddEmployee = ({ onAddEmployee, apiUrl }) => {
             value={formData.location}
             onChange={handleChange}
             required
+            className={styles.input}
           />
         </div>
-        <div>
-          <label htmlFor="department">Department: </label>
+        <div className={styles.addFormRow}>
+          <label htmlFor="department" className={styles.label}>
+            Department:{" "}
+          </label>
           <input
             id="department"
             type="text"
@@ -162,10 +188,13 @@ const AddEmployee = ({ onAddEmployee, apiUrl }) => {
             value={formData.department}
             onChange={handleChange}
             required
+            className={styles.input}
           />
         </div>
-        <div>
-          <label htmlFor="skills">Skills: </label>
+        <div className={styles.addFormRow}>
+          <label htmlFor="skills" className={styles.label}>
+            Skills:{" "}
+          </label>
           <input
             id="skills"
             type="text"
@@ -173,9 +202,12 @@ const AddEmployee = ({ onAddEmployee, apiUrl }) => {
             value={formData.skills}
             onChange={handleChange}
             required
+            className={styles.input}
           />
         </div>
-        <button type="submit">Add</button>
+        <button type="submit" className={styles.button}>
+          Add
+        </button>
       </form>
     </>
   );

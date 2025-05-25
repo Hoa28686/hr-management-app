@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { animalToEmoji } from "../../data/animalToEmoji.js";
-import "./PersonCard.css";
+import styles from "./PersonCard.module.css";
 import _ from "lodash";
 
 const PersonCard = ({
@@ -83,11 +83,11 @@ const PersonCard = ({
   }
 
   if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error.message}</div>;
+  if (error) return <div className={styles.error}>Error: {error.message}</div>;
   return (
-    <div className="person-card">
+    <div className={styles["person-card"]}>
       <p>
-        <span className="name">{name}</span>
+        <span className={styles.name}>{name}</span>
       </p>
       <p>
         Position: <span>{title}</span>
@@ -95,7 +95,7 @@ const PersonCard = ({
       <p>
         Phone: <span>{phone}</span>
       </p>
-      <p className="email">
+      <p className={styles.email}>
         Email: <span>{email}</span>
       </p>
       <p>
@@ -106,8 +106,8 @@ const PersonCard = ({
       </p>
       {Editing ? (
         <div>
-          <form onSubmit={handleSubmit} className="editInfo">
-            <div className="row">
+          <form onSubmit={handleSubmit} className={styles.editInfo}>
+            <div className={styles.row}>
               <label>Salary: €</label>
               <input
                 type="number"
@@ -115,48 +115,57 @@ const PersonCard = ({
                 name="salary"
                 value={newInfo.salary}
                 onChange={handleChange}
+                className={styles.input}
               />
             </div>
-            <div className="row">
+            <div className={styles.row}>
               <label>Location: </label>
               <input
                 type="text"
                 name="location"
                 value={newInfo.location}
                 onChange={handleChange}
+                className={styles.input}
               />
             </div>
-            <div className="row">
+            <div className={styles.row}>
               <label>Department: </label>
               <input
                 type="text"
                 name="department"
                 value={newInfo.department}
                 onChange={handleChange}
+                className={styles.input}
               />
             </div>
-            <div className="row">
+            <div className={styles.row}>
               <label>Skills: </label>
               <textarea
                 type="text"
                 name="skills"
                 value={newInfo.skills}
                 onChange={handleChange}
+                className={styles.textArea}
               ></textarea>
             </div>
             <p style={{ color: "grey", textTransform: "none" }}>
               (Enter skills in comma-seperated string, e.g., "leadership,
               communication")
             </p>
-            <div className="personCard-footer">
+            <div className={styles["personCard-footer"]}>
               <button
                 type="submit"
                 disabled={isSaveDisabled}
-                className={isSaveDisabled ? "disabled" : ""}
+                className={`
+                  ${styles.button} + ${isSaveDisabled ? styles.disabled : ""}`}
               >
                 Save
               </button>
-              <button type="button" onClick={handleCancel}>
+              <button
+                type="button"
+                onClick={handleCancel}
+                className={styles.button}
+              >
                 Cancel
               </button>
             </div>
@@ -178,16 +187,20 @@ const PersonCard = ({
           </p>
 
           {[5, 10, 15].includes(workingYear) && (
-            <p className="schedule recognition">
+            <p className={`${styles.schedule} ${styles.recognition}`}>
               🎉 Schedule recognition meeting.
             </p>
           )}
           {workingYear <= 0.5 && (
-            <p className="schedule probation">🔔 Schedule probation review.</p>
+            <p className={`${styles.schedule} ${styles.probation}`}>
+              🔔 Schedule probation review.
+            </p>
           )}
-          <div className="personCard-footer">
-            <button onClick={() => setEditing(true)}>Edit</button>
-          </div>
+
+          <div className={styles["personCard-footer"]}></div>
+          <button onClick={() => setEditing(true)} className={styles.button}>
+            Edit
+          </button>
         </div>
       )}
     </div>

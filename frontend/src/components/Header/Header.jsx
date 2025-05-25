@@ -34,7 +34,7 @@ const Header = () => {
 
   return (
     <header className={styles.header}>
-      <div className={styles.container}>
+      <div className={`container ${styles.headerContainer}`}>
         <Link to="/" className={styles["nav-logo"]}>
           HR APP
         </Link>
