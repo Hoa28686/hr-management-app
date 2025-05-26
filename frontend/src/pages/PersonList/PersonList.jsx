@@ -1,6 +1,4 @@
 import PersonCard from "../../components/PersonCard/PersonCard";
-import ScrollToTop from "react-scroll-to-top";
-import { FiArrowUpCircle } from "react-icons/fi";
 
 import styles from "./PersonList.module.css";
 import { useState } from "react";
@@ -46,9 +44,6 @@ const PersonList = ({ employeeData, handleInfoChange, error, loading }) => {
           <p>No matching employees found. Try another search.</p>
         )}
       </div>
-      <ScrollToTop>
-        <FiArrowUpCircle />
-      </ScrollToTop>
     </>
   );
 };

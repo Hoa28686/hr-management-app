@@ -18,7 +18,7 @@ function App() {
     };
     fetchData(apiUrl);
   }, []);
-  console.log(error, loading);
+
   const handleInfoChange = async (id, newInfo) => {
     const updatedInfo = await patch(apiUrl, id, newInfo);
     setEmployeeData((prev) =>

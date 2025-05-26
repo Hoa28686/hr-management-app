@@ -1,6 +1,6 @@
 import styles from "./About.module.css";
 import { FiLink } from "react-icons/fi";
-import { FaLongArrowAltRight } from "react-icons/fa";
+
 const About = () => {
   return (
     <>

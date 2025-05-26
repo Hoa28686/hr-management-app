@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 const useAxios = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
