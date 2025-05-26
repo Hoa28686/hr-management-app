@@ -45,6 +45,7 @@ const About = () => {
           <h2 className={styles.sectionTitle}>📝 Key Features</h2>
           <ul className={styles.sectionList}>
             <li>Fetch data from API and display a list of employees</li>
+            <li>Search employees by name or title</li>
             <li>Edit employee salary, location, department and skills</li>
             <li>Add new employee through a form</li>
             <li>
