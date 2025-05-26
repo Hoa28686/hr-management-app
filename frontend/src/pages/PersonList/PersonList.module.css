@@ -10,7 +10,7 @@
   color: orangered;
 }
 .searchList {
-  width: 60%;
+  width: 80%;
   padding: 0.5rem;
   border: var(--border);
   border-radius: 5px;
@@ -21,6 +21,11 @@
 }
 
 @media screen and (min-width: 768px) {
+  .searchList {
+    width: 55%;
+  }
+}
+@media screen and (min-width: 992px) {
   .searchList {
     width: 50%;
   }
