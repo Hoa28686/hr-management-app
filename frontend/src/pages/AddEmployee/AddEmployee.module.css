@@ -13,18 +13,19 @@
 }
 
 .label {
-  width: 35%;
+  width: 36%;
 }
 
 .input {
-  width: 65%;
+  width: 64%;
   border: var(--border);
   border-radius: 0.2rem;
   padding: 0.5rem;
 }
 
-.addFormInput:focus {
-  outline: 1px solid green;
+.input:focus {
+  background-color: black;
+  color: white;
 }
 
 .button {
