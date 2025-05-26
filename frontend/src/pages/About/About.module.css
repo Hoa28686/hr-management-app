@@ -8,7 +8,6 @@
 
 .pageLink {
   color: #2b63fd;
-  /* color: var(--hover-color); */
   font-weight: bold;
 }
 .pageLink:hover {
@@ -19,7 +18,25 @@
 }
 
 .sectionList {
-  list-style: square;
-  padding-left: 2rem;
+  list-style: none;
   line-height: 1.8;
+}
+.sectionList li {
+  padding-left: 1rem;
+  position: relative;
+}
+.sectionList li:before {
+  content: ">";
+  font-family: var(--second-font);
+  font-size: 0.8rem;
+  padding-right: 10px;
+  position: absolute;
+  left: 0;
+  top: 0.15rem;
+  transform: rotate(10deg);
+}
+@media screen and (min-width: 768px) {
+  .sectionList li:before {
+    top: 0.3rem;
+  }
 }
