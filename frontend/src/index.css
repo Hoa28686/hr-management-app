@@ -8,6 +8,7 @@
   --title-color: black;
   --text-color: black;
   --text-white: white;
+  --link-color: #2b63fd;
   --hover-color: #0c960c;
   --body-background: white;
   --header-background: #beff93;
@@ -109,6 +110,7 @@ ul {
 .dark-theme {
   --title-color: white;
   --text-color: white;
+  --link-color: #0de70d;
   --body-background: black;
   --header-background: #2d2d2d;
   --scroll-background: #3e3e3e;

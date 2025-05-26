@@ -7,11 +7,11 @@
 }
 
 .pageLink {
-  color: #2b63fd;
+  color: var(--link-color);
   font-weight: bold;
 }
 .pageLink:hover {
-  color: black;
+  color: var(--text-color);
 }
 .pageLink:visited {
   color: orange;
