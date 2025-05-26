@@ -13,11 +13,11 @@
 }
 
 .label {
-  width: 30%;
+  width: 35%;
 }
 
 .input {
-  width: 70%;
+  width: 65%;
   border: var(--border);
   border-radius: 0.2rem;
   padding: 0.5rem;

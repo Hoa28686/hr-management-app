@@ -49,7 +49,7 @@ const AddEmployee = ({ onAddEmployee, apiUrl }) => {
 
         return [key, formatedValue];
       })
-    )
+    ),
   };
 
   const handleSubmit = async (e) => {
