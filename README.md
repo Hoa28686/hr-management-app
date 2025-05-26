@@ -1,15 +1,15 @@
 # HR Application
 
-          This is a simple HR application that allows users to manage, add, and
-          edit employees. It is a school project demonstrate what I have learned
-          in React, through components, routing, state management and APIs. The
-          app is deployed using Render for the backend and Vercel for the
-          frontend.
+This is a simple HR application that allows users to manage, add, and
+edit employees. It is a school project demonstrate what I have learned
+in React, through components, routing, state management and APIs. The
+app is deployed using Render for the backend and Vercel for the
+frontend.
 
 ## Links and Live Page
 
-[Frontend](https://react-hr-app-hazel.vercel.app/)
-[Backend (JSON Server API)](https://react-hr-app.onrender.com/employees)
+- [Frontend](https://react-hr-app-hazel.vercel.app/)
+- [Backend (JSON Server API)](https://react-hr-app.onrender.com/employees)
 
 ## 📝 Key Features
 
