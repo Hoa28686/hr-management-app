@@ -1,0 +1,27 @@
+.personList {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.success {
+  color: green;
+}
+.error {
+  color: orangered;
+}
+.searchList {
+  width: 60%;
+  padding: 0.5rem;
+  border: var(--border);
+  border-radius: 5px;
+}
+.searchList:focus {
+  color: white;
+  background-color: black;
+}
+
+@media screen and (min-width: 768px) {
+  .searchList {
+    width: 50%;
+  }
+}

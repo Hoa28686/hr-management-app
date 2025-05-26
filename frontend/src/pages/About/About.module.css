@@ -7,7 +7,8 @@
 }
 
 .pageLink {
-  color: var(--hover-color);
+  color: #2b63fd;
+  /* color: var(--hover-color); */
   font-weight: bold;
 }
 

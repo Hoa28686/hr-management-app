@@ -66,17 +66,7 @@
   font-weight: bold;
   font-size: 1.5rem;
 }
-.personList {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.success {
-  color: green;
-}
-.error {
-  color: orangered;
-}
+
 .personCard-footer:hover {
   color: green;
 }

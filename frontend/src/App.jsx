@@ -10,10 +10,10 @@ import useAxios from "./hooks/useAxios";
 function App() {
   const [employeeData, setEmployeeData] = useState([]);
   const { get, patch, error, loading } = useAxios();
-  const apiUrl = "https://react-hr-app.onrender.com/employeess";
+  const apiUrl = "https://react-hr-app.onrender.com/employees";
 
   useEffect(() => {
-    const fetchData = async (apirurl) => {
+    const fetchData = async (apiUrl) => {
       setEmployeeData(await get(apiUrl));
     };
     fetchData(apiUrl);
