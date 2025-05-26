@@ -70,7 +70,7 @@ const Header = () => {
             </li>
           </ul>
 
-          {/* close button */}
+          {/* close menu button */}
           <IoClose className={styles["nav-close"]} onClick={hideMenu} />
         </nav>
 

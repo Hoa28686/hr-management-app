@@ -16,7 +16,7 @@ const PersonList = ({ employeeData, handleInfoChange, error, loading }) => {
     const matchSearch = em.name.includes(search) || em.title.includes(search);
     return matchSearch;
   });
-  console.log(filteredEmployees);
+
   if (loading) return <h1>Loading...</h1>;
   if (error) return <h1 className={styles.error}>Error: {error.message}</h1>;
 
