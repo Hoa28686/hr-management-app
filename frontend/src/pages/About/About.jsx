@@ -8,9 +8,10 @@ const About = () => {
       <div className="container">
         <p>
           This is a simple HR application that allows users to manage, add, and
-          edit employees. It is a school project designed to demonstrate what I
-          have learned in React, through components, routing, state management
-          and APIs. The app is deployed using Render.
+          edit employees. It is a school project demonstrate what I have learned
+          in React, through components, routing, state management and APIs. The
+          app is deployed using Render for the backend and Vercel for the
+          frontend.
         </p>
 
         <section className={styles.section}>
@@ -21,7 +22,7 @@ const About = () => {
             <li>
               <a
                 className={styles.pageLink}
-                href="https://react-hr-app-myzr.onrender.com/"
+                href="https://react-hr-app-hazel.vercel.app/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -35,13 +36,13 @@ const About = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Backend (JSON Server)
+                Backend (JSON Server API)
               </a>
             </li>
           </ul>
         </section>
         <section className={styles.section}>
-          <h2 className={styles.sectionTitle}>📝 Features Included </h2>
+          <h2 className={styles.sectionTitle}>📝 Key Features</h2>
           <ul className={styles.sectionList}>
             <li>Fetch data from API and display a list of employees</li>
             <li>Edit employee salary, location, department and skills</li>
