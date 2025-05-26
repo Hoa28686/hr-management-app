@@ -16,11 +16,10 @@ const PersonCard = ({
   department,
   skills,
   handleInfoChange,
-
 }) => {
   const [Editing, setEditing] = useState(false);
   const [saveMessage, setSaveMessage] = useState("");
-  // object shorthand when key name = value's variable name
+
   const prevInfo = { salary, location, department, skills };
   const [newInfo, setNewInfo] = useState(prevInfo);
 
@@ -59,7 +58,6 @@ const PersonCard = ({
     setTimeout(() => setSaveMessage(""), 1500);
   };
 
-  // need to: npm install lodash
   const isSaveDisabled = newInfo === "" || _.isEqual(newInfo, prevInfo);
 
   const handleCancel = () => {
@@ -67,14 +65,12 @@ const PersonCard = ({
     setEditing(false);
   };
 
-  // message for recognition or probation
   const now = new Date();
   const then = new Date(startDate);
   const difference = (now - then) / (1000 * 60 * 60 * 24 * 365);
   const workingYear =
     difference >= 1 ? Math.floor(difference) : difference.toFixed(1);
 
-  // animal icon
   let animalIcon = "";
   if (animal) {
     const animalLower = animal.toLowerCase();
@@ -82,7 +78,6 @@ const PersonCard = ({
       ? animalToEmoji[animalLower]
       : animal;
   }
-
 
   return (
     <div className={styles["person-card"]}>
