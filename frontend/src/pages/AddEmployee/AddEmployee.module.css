@@ -24,7 +24,7 @@
 }
 
 .input:focus {
-  background-color: black;
+  background-color: #464646;
   color: white;
 }
 
