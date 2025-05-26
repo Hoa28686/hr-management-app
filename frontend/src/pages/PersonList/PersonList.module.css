@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  margin: 2rem;
 }
 .success {
   color: green;
@@ -14,6 +15,7 @@
   padding: 0.5rem;
   border: var(--border);
   border-radius: 5px;
+  box-shadow: var(--shadow);
 }
 .searchList:focus {
   color: white;
