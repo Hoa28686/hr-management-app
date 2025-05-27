@@ -16,6 +16,7 @@ const PersonCard = ({
   department,
   skills,
   handleInfoChange,
+
 }) => {
   const [Editing, setEditing] = useState(false);
   const [saveMessage, setSaveMessage] = useState("");
@@ -58,12 +59,14 @@ const PersonCard = ({
     setTimeout(() => setSaveMessage(""), 1500);
   };
 
+ 
   const isSaveDisabled = newInfo === "" || _.isEqual(newInfo, prevInfo);
 
   const handleCancel = () => {
     setNewInfo(prevInfo);
     setEditing(false);
   };
+
 
   const now = new Date();
   const then = new Date(startDate);
@@ -78,6 +81,7 @@ const PersonCard = ({
       ? animalToEmoji[animalLower]
       : animal;
   }
+
 
   return (
     <div className={styles["person-card"]}>

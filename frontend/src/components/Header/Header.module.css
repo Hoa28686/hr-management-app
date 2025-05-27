@@ -3,9 +3,28 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-color: var(--header-background);
   z-index: var(--z);
+  background: var(--header-background);
   transition: background-color 0.4s;
+  padding: 0.8rem;
+}
+.header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 5px;
+  width: 100%;
+  background: linear-gradient(
+    to right,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet
+  ); /* gradient colors */
 }
 .headerContainer {
   height: var(--header-height);
@@ -41,6 +60,7 @@
     position: fixed;
     top: -200%;
     right: 0;
+    z-index: calc((var(--z)+100));
     background-color: var(--header-background);
     width: 100%;
     box-shadow: var(--shadow);
@@ -78,6 +98,9 @@
   top: 0;
 }
 
+.show-menu::after {
+  bottom: 200px;
+}
 /* _________breakpoint for desktop_________ */
 /* for desktop */
 @media screen and (min-width: 992px) {
@@ -87,9 +110,7 @@
   }
 
   .nav-list {
-    display: flex;
     flex-direction: row;
-    justify-content: center;
     gap: 1.5rem;
   }
 }

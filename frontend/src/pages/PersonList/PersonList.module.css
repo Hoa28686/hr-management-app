@@ -1,8 +1,36 @@
+.searchContainer,
 .personList {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   margin-block: 2rem;
+}
+.searchContainer {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+}
+.searchIcon {
+  position: absolute;
+  left: 0.8rem;
+  top: 50%;
+  transform: translateY(-55%);
+}
+.searchText {
+  width: 100%;
+  padding: 0.5rem 3rem;
+  border: none;
+  border-radius: 6px;
+  box-shadow: var(--shadow);
+  border: var(--border);
+}
+.searchText:focus {
+  color: white;
+  background-color: #464646;
+}
+.searchContainer:focus {
+  color: white;
+  background-color: #464646;
 }
 .success {
   color: green;
@@ -10,25 +38,13 @@
 .error {
   color: orangered;
 }
-.searchList {
-  width: 80%;
-  padding: 0.5rem;
-  border: var(--border);
-  border-radius: 5px;
-  box-shadow: var(--shadow);
-}
-.searchList:focus {
-  color: white;
-  background-color: #464646;
-}
-
 @media screen and (min-width: 768px) {
-  .searchList {
+  .searchContainer {
     width: 55%;
   }
 }
 @media screen and (min-width: 992px) {
-  .searchList {
+  .searchContainer {
     width: 50%;
   }
 }

@@ -3,7 +3,7 @@ import { FiLink } from "react-icons/fi";
 
 const About = () => {
   return (
-    <>
+    <div className={styles.about}>
       <h1>HR Application</h1>
       <div className="container">
         <p>
@@ -72,7 +72,7 @@ const About = () => {
           </ul>
         </section>
       </div>
-    </>
+    </div>
   );
 };
 

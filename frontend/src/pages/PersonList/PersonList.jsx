@@ -15,17 +15,18 @@ const PersonList = ({ employeeData, handleInfoChange, error, loading }) => {
     return matchSearch;
   });
 
-  if (loading) return <h1>Loading...</h1>;
+  if (loading) return <h1>Loading . . .</h1>;
   if (error) return <h1 className={styles.error}>Error: {error.message}</h1>;
 
   return (
     <>
       <h1>Employee List</h1>
-      <div className={styles.personList}>
+      <div className={styles.searchContainer}>
+        <span className={styles.searchIcon}>🔍</span>
         <input
           type="text"
-          className={styles.searchList}
-          placeholder="Search by name or title . . ."
+          className={styles.searchText}
+          placeholder="Search by name or title"
           value={searchValue}
           onChange={searchHandle}
         />

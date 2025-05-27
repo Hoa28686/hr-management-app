@@ -33,7 +33,9 @@ const Header = () => {
   };
 
   return (
-    <header className={styles.header}>
+    <header
+      className={`${styles.header} ${showMenu ? styles["show-menu"] : ""}`}
+    >
       <div className={`container ${styles.headerContainer}`}>
         <Link to="/" className={styles["nav-logo"]}>
           HR APP
@@ -70,7 +72,7 @@ const Header = () => {
             </li>
           </ul>
 
-          {/* close menu button */}
+          {/* close button */}
           <IoClose className={styles["nav-close"]} onClick={hideMenu} />
         </nav>
 
