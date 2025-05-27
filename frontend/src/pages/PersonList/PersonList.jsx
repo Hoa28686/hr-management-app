@@ -15,7 +15,14 @@ const PersonList = ({ employeeData, handleInfoChange, error, loading }) => {
     return matchSearch;
   });
 
-  if (loading) return <h1>Loading . . .</h1>;
+  if (loading) {
+    return (
+      <div className={styles.loading}>
+        <h1>Loading . . .</h1>
+        <h2>It might take a little while</h2>
+      </div>
+    );
+  }
   if (error) return <h1 className={styles.error}>Error: {error.message}</h1>;
 
   return (

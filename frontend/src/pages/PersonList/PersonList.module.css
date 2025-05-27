@@ -1,3 +1,7 @@
+.loading {
+  text-align: center;
+  margin: 10rem auto;
+}
 .searchContainer,
 .personList {
   display: flex;
