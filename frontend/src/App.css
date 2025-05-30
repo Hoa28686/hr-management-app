@@ -3,6 +3,6 @@
 }
 
 main {
-  min-height: calc(100vh);
+  min-height: calc(100vh - 7rem);
   margin-block: 2rem;
 }
