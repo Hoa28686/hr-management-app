@@ -54,13 +54,14 @@
 }
 .input,
 .textArea {
-  min-width: 12rem;
+  width: 14rem;
   padding: 0.3rem;
+  margin-inline: 0.8rem 0;
   border: 1px solid grey;
   border-radius: 0.2rem;
 }
-.textarea {
-  height: 6rem;
+.textArea {
+  min-height: 6rem;
 }
 .name {
   font-weight: bold;
@@ -72,7 +73,7 @@
 }
 .disabled {
   color: grey;
-  pointer-events: none; /* disables interaction */
+  pointer-events: none; 
 }
 
 .schedule {
