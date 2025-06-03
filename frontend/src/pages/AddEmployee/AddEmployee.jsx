@@ -27,7 +27,7 @@ const AddEmployee = ({ onAddEmployee, apiUrl }) => {
   };
 
   const newEmployee = {
-    id: Date.now(),
+    id: Date.now().toString(),
     ...Object.fromEntries(
       Object.entries(formData).map(([key, value]) => {
         let formatedValue;
@@ -56,7 +56,7 @@ const AddEmployee = ({ onAddEmployee, apiUrl }) => {
     e.preventDefault();
 
     const addedNewEmployee = await post(apiUrl, newEmployee);
-    
+
     if (error) {
       console.error(error.message);
       return;
