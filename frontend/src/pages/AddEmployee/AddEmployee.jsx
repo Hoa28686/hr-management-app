@@ -19,7 +19,7 @@ const emptyForm = {
 const AddEmployee = ({ onAddEmployee, apiUrl }) => {
   const [formData, setFormData] = useState(emptyForm);
   const navigate = useNavigate();
-  const { post } = useAxios();
+  const { post, error } = useAxios();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -56,8 +56,13 @@ const AddEmployee = ({ onAddEmployee, apiUrl }) => {
     e.preventDefault();
 
     const addedNewEmployee = await post(apiUrl, newEmployee);
-    onAddEmployee(addedNewEmployee);
+    
+    if (error) {
+      console.error(error.message);
+      return;
+    }
 
+    onAddEmployee(addedNewEmployee);
     setFormData(emptyForm);
     navigate("/");
   };
